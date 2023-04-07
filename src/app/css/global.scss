@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import './helpers';
 @import './reset.css';
 
@@ -24,7 +28,7 @@ html {
 
 body {
   background-color: black;
-  font-family: var(--font-body);
+  font-family: var(--font-system);
   transition: opacity #{$duration / 3 + 's'} ease-in;
 }
 

@@ -5,7 +5,10 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
@@ -17,5 +20,7 @@
   },
   "[less]": {
     "editor.formatOnSave": false
-  }
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
