@@ -6,7 +6,7 @@ export default function Grid() {
   return (
     <div className="">
       <Image
-        className="absolute -top-[10px] h-[18px] w-[1920px] items-center justify-center"
+        className="absolute -top-[10px] h-[18px] w-screen items-center justify-center"
         src="/hr.svg"
         height={18}
         width={1920}
