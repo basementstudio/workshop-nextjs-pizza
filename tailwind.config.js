@@ -1,5 +1,3 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -21,6 +19,24 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-nichrome)'],
         neon: ['var(--font-neon)']
+      },
+      fontSize: {
+        base: '2rem',
+        product: '64px',
+        title: '80px',
+        hero: '244px'
+      },
+      lineHeight: {
+        trim: '74%',
+        tight: '100%'
+      },
+      dropShadow: {
+        cart: '0px 2px 0px #000000',
+        close: '0px 2px 0px #000000',
+        section: '0px 8px 0px #6BE5D0'
+      },
+      borderRadius: {
+        extra: '32px'
       }
     }
   },

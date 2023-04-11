@@ -5,6 +5,20 @@
 @import './helpers';
 @import './reset.css';
 
+@layer base {
+  .font-outline {
+    // -webkit-text-stroke: 1px black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  .box-outline {
+    // -webkit-text-stroke: 1px black;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+}
+
 :root {
   --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
     ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;

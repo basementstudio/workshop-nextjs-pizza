@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
-      <body>{children}</body>
+      <body className="bg-cream">{children}</body>
     </html>
   )
 }
