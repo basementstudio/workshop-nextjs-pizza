@@ -6,17 +6,17 @@ import SizeButton from './size-btn'
 export default function Product() {
   return (
     <>
-      <div className="relative flex w-full flex-col gap-6 rounded-extra border-2 border-black bg-cream p-6 font-display drop-shadow-cart">
+      <div className="relative mx-4 flex flex-col gap-4 md:gap-6 rounded-2xl md:rounded-extra border md:border-2 border-black bg-cream p-4 sm:p-6 font-display drop-shadow-cart sm:mx-0 lg:w-full">
         <div className="flex justify-between">
-          <div className="w-80 text-product font-black uppercase leading-trim text-black">
-            extra spicy bsmnt tee
+          <div className="w-36 text-4xl font-black uppercase leading-trim text-black md:text-product lg:w-80">
+            extra spicy tee
           </div>
-          <div className="w-52 text-2xl uppercase leading-tight text-black">
-            The best tee you ever had, with a basement spice twist.
+          <div className="w-32 text-[16px] uppercase leading-tight text-black lg:w-52 lg:text-2xl">
+            the best tee you ever had, made with the basement spices
           </div>
         </div>
-        <div className="absolute left-48 top-16 z-10 w-36 text-base font-black">
-          <div className="z-20 justify-center pt-2 text-center text-pink">
+        <div className="absolute z-10 w-20 font-black md:w-36 left-24 lg:left-48 lg:top-16">
+          <div className="z-20 justify-center pt-1 md:pt-2 text-center text-lg md:text-base text-pink">
             PRICE
           </div>
           <Image
@@ -27,16 +27,16 @@ export default function Product() {
             alt=""
           />
         </div>
-        <div className="w-full rounded-3xl bg-black">
+        <div className=" w-full rounded-xl md:rounded-3xl bg-black">
           <Image
-            className="rounded-extra"
+            className="rounded-extra "
             src="/tees/tee-basement-studio.png"
             height={511}
             width={582}
             alt="tee basement"
           />
-          <div className="flex h-24 items-center justify-between px-6">
-            <div className="flex gap-3 ">
+          <div className="flex h-12 md:h-16 items-center justify-between px-4 md:px-6 lg:h-24">
+            <div className="flex gap-2 sm:gap-3 ">
               <SizeButton size={'S'} />
               <SizeButton size={'M'} selected={true} />
               <SizeButton size={'L'} />

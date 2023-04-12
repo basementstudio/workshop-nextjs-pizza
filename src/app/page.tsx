@@ -17,7 +17,7 @@ export default function Page() {
         <Nav />
         {/* <Cart /> */}
         <Hero />
-        {/* <Shop /> */}
+        <Shop />
         {/* <Stack /> */}
         {/* <Footer /> */}
       </Container>

@@ -1,6 +1,3 @@
-import Image from 'next/image'
-
-import CartCloseButton from './cart-btn-close'
 import CartFooter from './cart-footer'
 import CartHeader from './cart-header'
 import CartProduct from './cart-product'
