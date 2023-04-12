@@ -11,11 +11,36 @@ export default function Stack() {
           meet our stack for the best cooking
         </div>
         <div className="flex items-center justify-center gap-16">
-          <Image src="/logos/next.svg" height={36} width={36} />
-          <Image src="/logos/ts.svg" height={36} width={36} />
-          <Image src="/logos/vercel.svg" height={36} width={36} />
-          <Image src="/logos/shopify.svg" height={36} width={36} />
-          <Image src="/logos/tailwind.svg" height={36} width={36} />
+          <Image
+            src="/logos/next.svg"
+            height={36}
+            width={36}
+            alt="logo nextjs"
+          />
+          <Image
+            src="/logos/ts.svg"
+            height={36}
+            width={36}
+            alt="logo typescript"
+          />
+          <Image
+            src="/logos/vercel.svg"
+            height={36}
+            width={36}
+            alt="logo vercel"
+          />
+          <Image
+            src="/logos/shopify.svg"
+            height={36}
+            width={36}
+            alt="logo shopify"
+          />
+          <Image
+            src="/logos/tailwind.svg"
+            height={36}
+            width={36}
+            alt="logo tailwindcss"
+          />
         </div>
 
         <div className="absolute inset-0 h-full w-screen">
@@ -24,24 +49,28 @@ export default function Stack() {
             src="/cap.svg"
             height={156}
             width={218}
+            alt="cap"
           />
           <Image
             className="relative left-32 top-48"
             src="/pizza.svg"
             height={134}
             width={144}
+            alt="pizza"
           />
           <Image
-            className="relative left-64 -top-24"
+            className="relative -top-24 left-64"
             src="/star-pink.svg"
             height={36}
             width={36}
+            alt="pink star"
           />
           <Image
             className="relative left-3/4 top-48"
             src="/star-teal.svg"
             height={32}
             width={32}
+            alt="teal star"
           />
         </div>
       </section>

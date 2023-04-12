@@ -1,9 +1,15 @@
-export default function SizeButton({ size, selected }) {
+export default function SizeButton({
+  size,
+  selected
+}: {
+  size: string
+  selected?: boolean
+}) {
   return (
     <>
       <button
         aria-selected={selected}
-        className="flex text-cream justify-center text-center text-base font-display bg-black rounded-full border-2 border-cream aria-selected:bg-teal aria-selected:text-black hover:bg-teal items-center leading-trim w-12 h-12"
+        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-cream bg-black text-center font-display text-base leading-trim text-cream hover:bg-teal aria-selected:bg-teal aria-selected:text-black"
       >
         {size}
       </button>

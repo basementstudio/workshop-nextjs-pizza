@@ -1,7 +1,7 @@
 export default function CartAddButton() {
   return (
     <>
-      <button className="flex justify-end bg-teal rounded-full font-display text-base text-black font-bold border-2 border-cream items-center px-4 leading-trim h-12 hover:bg-black hover:text-cream">
+      <button className="flex h-12 items-center justify-end rounded-full border-2 border-cream bg-teal px-4 font-display text-base font-bold leading-trim text-black hover:bg-black hover:text-cream">
         ADD TO CART
       </button>
     </>

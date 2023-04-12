@@ -11,11 +11,17 @@ export default function Footer() {
               src="/logos/basement.svg"
               height={26}
               width={185}
+              alt="logo basement"
             />
-            <div className="leading-tight pt-[50px] pb-12">
+            <div className="pb-12 pt-[50px] leading-tight">
               our work is serious, <br /> we are not.
             </div>
-            <Image src="/logos/next-pizza.svg" height={84} width={412} />
+            <Image
+              src="/logos/next-pizza.svg"
+              height={84}
+              width={412}
+              alt="logo nextjs and pizza"
+            />
           </div>
 
           <div className="flex flex-col justify-end gap-6 text-right leading-tight">

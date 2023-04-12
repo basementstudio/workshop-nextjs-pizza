@@ -24,6 +24,7 @@ export default function Product() {
             src="/el/ellipse.svg"
             height={64}
             width={144}
+            alt=""
           />
         </div>
         <div className="w-full rounded-3xl bg-black">
@@ -32,6 +33,7 @@ export default function Product() {
             src="/tees/tee-basement-studio.png"
             height={511}
             width={582}
+            alt="tee basement"
           />
           <div className="flex h-24 items-center justify-between px-6">
             <div className="flex gap-3 ">

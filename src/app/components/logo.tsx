@@ -1,7 +1,7 @@
 export default function Logo() {
   return (
     <>
-      <div className="text-base  justify-center font-black font-display text-teal drop-shadow-btn2 font-outline">
+      <div className="drop-shadow-btn2 font-outline justify-center font-display text-base font-black text-teal">
         NEXT JS & PIZZA
       </div>
     </>

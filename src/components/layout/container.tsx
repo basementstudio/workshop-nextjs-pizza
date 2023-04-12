@@ -8,7 +8,7 @@ export const Container = React.forwardRef<
   }
 >(({ className, as = 'div', ...props }, ref) => {
   const Element: React.ElementType = as
-  return <Element {...props} className={clsx('m-auto')} ref={ref} />
+  return <Element {...props} className={clsx('m-auto', className)} ref={ref} />
 })
 
 export type ContainerProps = React.ComponentProps<typeof Container>
