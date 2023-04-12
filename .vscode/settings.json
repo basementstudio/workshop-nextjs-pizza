@@ -23,5 +23,6 @@
   },
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "prettier.useEditorConfig": true
+  "prettier.useEditorConfig": true,
+  "dotenv.enableAutocloaking": false
 }
