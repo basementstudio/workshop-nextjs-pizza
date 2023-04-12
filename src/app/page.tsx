@@ -15,11 +15,11 @@ export default function Page() {
     <>
       <Container>
         <Nav />
-        <Cart />
+        {/* <Cart /> */}
         <Hero />
-        <Shop />
-        <Stack />
-        <Footer />
+        {/* <Shop /> */}
+        {/* <Stack /> */}
+        {/* <Footer /> */}
       </Container>
     </>
   )
