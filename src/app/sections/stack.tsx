@@ -43,7 +43,7 @@ export default function Stack() {
           />
         </div>
 
-        <div className="absolute inset-0 h-full w-screen">
+        <div className="absolute inset-0 h-full">
           <Image
             className="relative left-2/3 top-16"
             src="/cap.svg"
