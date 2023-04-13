@@ -8,7 +8,7 @@ export default function Grid() {
     <div className="">
       <Image
         className="absolute -top-[10px] h-[18px] w-screen items-center justify-center"
-        src="/hr.svg"
+        src="/primitives/hr.svg"
         height={18}
         width={1920}
         alt=""
@@ -33,7 +33,7 @@ export default function Grid() {
         ))}
         <Image
           className="relative -top-[9px] h-[18px] w-[1920px] items-center justify-center"
-          src="/hr.svg"
+          src="/primitives/hr.svg"
           height={18}
           width={1920}
           alt=""

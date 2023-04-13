@@ -6,7 +6,7 @@ import SizeButton from './size-btn'
 export default function Product() {
   return (
     <>
-      <div className="relative mx-4 flex flex-col gap-4 md:gap-6 rounded-2xl md:rounded-extra border md:border-2 border-black bg-cream p-4 sm:p-6 font-display drop-shadow-cart sm:mx-0 lg:w-full">
+      <div className="relative mx-4 flex flex-col gap-4 rounded-2xl border border-black bg-cream p-4 font-display drop-shadow-cart sm:mx-0 sm:p-6 md:gap-6 md:rounded-extra md:border-2 lg:w-full">
         <div className="flex justify-between">
           <div className="w-36 text-4xl font-black uppercase leading-trim text-black md:text-product lg:w-80">
             extra spicy tee
@@ -15,19 +15,19 @@ export default function Product() {
             the best tee you ever had, made with the basement spices
           </div>
         </div>
-        <div className="absolute z-10 w-20 font-black md:w-36 left-24 lg:left-48 lg:top-16">
-          <div className="z-20 justify-center pt-1 md:pt-2 text-center text-lg md:text-base text-pink">
+        <div className="absolute left-24 z-10 w-20 font-black md:w-36 lg:left-48 lg:top-16">
+          <div className="z-20 justify-center pt-1 text-center text-lg text-pink md:pt-4 md:text-base">
             PRICE
           </div>
           <Image
             className="absolute top-0 -z-10 "
-            src="/el/ellipse.svg"
+            src="/primitives/ellipse.svg"
             height={64}
             width={144}
             alt=""
           />
         </div>
-        <div className=" w-full rounded-xl md:rounded-3xl bg-black">
+        <div className=" w-full rounded-xl bg-black md:rounded-3xl">
           <Image
             className="rounded-extra "
             src="/tees/tee-basement-studio.png"
@@ -35,7 +35,7 @@ export default function Product() {
             width={582}
             alt="tee basement"
           />
-          <div className="flex h-12 md:h-16 items-center justify-between px-4 md:px-6 lg:h-24">
+          <div className="flex h-12 items-center justify-between px-4 md:h-16 md:px-6 lg:h-24">
             <div className="flex gap-2 sm:gap-3 ">
               <SizeButton size={'S'} />
               <SizeButton size={'M'} selected={true} />

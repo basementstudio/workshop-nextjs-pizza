@@ -12,7 +12,7 @@ export default function CartHeader() {
 
       <Image
         className="relative -top-[9px] ml-10 w-[760px]"
-        src="/el/cart-hr.svg"
+        src="/primitives/cart-hr.svg"
         height={18}
         width={764}
         alt=""

@@ -3,7 +3,6 @@
 
 import { Container } from '~/components/layout/container'
 
-import Cart from './components/cart'
 import Nav from './components/nav'
 import Footer from './sections/footer'
 import Hero from './sections/hero'
@@ -15,11 +14,10 @@ export default function Page() {
     <>
       <Container>
         <Nav />
-        {/* <Cart /> */}
         <Hero />
         <Shop />
-        {/* <Stack /> */}
-        {/* <Footer /> */}
+        <Stack />
+        <Footer />
       </Container>
     </>
   )
