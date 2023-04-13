@@ -6,7 +6,7 @@ import SizeButton from './size-btn'
 export default function Product() {
   return (
     <>
-      <div className="relative mx-4 flex flex-col gap-4 rounded-2xl border border-black bg-cream p-4 font-display drop-shadow-cart sm:mx-0 sm:p-6 md:gap-6 md:rounded-extra md:border-2 lg:w-full">
+      <div className="relative flex flex-col gap-4 rounded-2xl border border-black bg-cream p-4 font-display drop-shadow-cart sm:p-6 md:gap-6 md:rounded-extra md:border-2 lg:mx-0 lg:w-full">
         <div className="flex justify-between">
           <div className="w-36 text-4xl font-black uppercase leading-trim text-black md:text-product lg:w-80">
             extra spicy tee
@@ -35,7 +35,7 @@ export default function Product() {
             width={582}
             alt="tee basement"
           />
-          <div className="flex h-12 items-center justify-between px-4 md:h-16 md:px-6 lg:h-24">
+          <div className="flex h-12 items-center justify-between px-4 md:h-20 md:px-6 lg:h-24">
             <div className="flex gap-2 sm:gap-3 ">
               <SizeButton size={'S'} />
               <SizeButton size={'M'} selected={true} />

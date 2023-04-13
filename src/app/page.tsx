@@ -16,8 +16,8 @@ export default function Page() {
         <Nav />
         <Hero />
         <Shop />
-        <Stack />
-        <Footer />
+        {/* <Stack /> */}
+        {/* <Footer /> */}
       </Container>
     </>
   )
