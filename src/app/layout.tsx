@@ -49,6 +49,7 @@ export default function RootLayout({
     <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
       <body className="bg-cream">
         <Providers>
+          {/* @ts-expect-error rsc */}
           <Header />
           <main>{children}</main>
           <Footer />
