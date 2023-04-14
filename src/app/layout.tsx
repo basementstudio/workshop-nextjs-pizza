@@ -4,6 +4,8 @@ import { Neonderthaw } from '@next/font/google'
 import localFont from '@next/font/local'
 import type { Metadata } from 'next'
 
+import { Providers } from './providers'
+
 const nichrome = localFont({
   src: [
     {
@@ -43,7 +45,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
-      <body className="bg-cream">{children}</body>
+      <body className="bg-cream">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

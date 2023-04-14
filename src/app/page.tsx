@@ -1,6 +1,3 @@
-// /* eslint-disable react/no-unknown-property */
-// 'use client'
-
 import { Container } from '~/components/layout/container'
 
 import Nav from './components/nav'
@@ -9,10 +6,11 @@ import Hero from './sections/hero'
 import Shop from './sections/shop'
 import Stack from './sections/stack'
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <Container>
+        {/* @ts-expect-error rsc */}
         <Nav />
         <Hero />
         <Shop />

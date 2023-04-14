@@ -1,7 +1,25 @@
+import { cookies } from 'next/dist/client/components/headers'
+
+import { CartFragment, cartFragment } from '~/shopify/sdk-gen/fragments'
+import { storefront } from '~/shopify/sdk-gen/sdk'
+import { cartCookieKey } from '~/shopify/storefront-hooks'
+
 import CartButton from './cart-btn'
 import Logo from './logo'
 
-export default function Nav() {
+export default async function Nav() {
+  const cookieStore = cookies()
+  const cookie = cookieStore.get(cartCookieKey + '-cart-id')
+  const cartId = cookie?.value
+
+  let prefetchedCart: CartFragment | undefined = undefined
+  if (cartId) {
+    const { cart } = await storefront.query({
+      cart: { __args: { id: cartId }, ...cartFragment }
+    })
+    prefetchedCart = cart
+  }
+
   return (
     <div className=" fixed top-0 z-50 min-w-full bg-cream">
       <div className="m-auto max-w-7xl">
@@ -12,7 +30,7 @@ export default function Nav() {
             <div>ABOUT</div>
             <div>SHOP ALL</div>
           </div>
-          <CartButton />
+          <CartButton prefetchedCart={prefetchedCart} />
         </nav>
       </div>
     </div>
