@@ -7,7 +7,7 @@ import { cartCookieKey } from '~/shopify/storefront-hooks/cart-cookie-key'
 import Cart from './cart'
 import Logo from './logo'
 
-export default async function Nav() {
+export default async function Header() {
   const cookieStore = cookies()
   const cookie = cookieStore.get(cartCookieKey)
   const cartId = cookie?.value

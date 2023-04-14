@@ -4,6 +4,7 @@ import { createStorefrontHooks } from '@bsmnt/storefront-hooks'
 import { cartCookieKey } from './cart-cookie-key'
 import { cartFragment, userErrorFragment } from '../sdk-gen/fragments'
 import { storefront } from '../sdk-gen/sdk'
+import { create } from 'zustand'
 
 export const {
   QueryClientProvider,
@@ -108,4 +109,20 @@ export const {
   createCartIfNotFound: true
 })
 
-// export { useProductFormHelper } from './use-product-form-helper'
+type CartStore = {
+  isOpen: boolean
+  toggle: () => void
+  open: () => void
+  close: () => void
+}
+
+export const useCartOpenState = create<CartStore>((set) => {
+  return {
+    isOpen: false,
+    toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+    open: () => set({ isOpen: true }),
+    close: () => set({ isOpen: false })
+  }
+})
+
+export { useProductFormHelper } from './use-product-form-helper'
