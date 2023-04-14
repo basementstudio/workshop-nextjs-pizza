@@ -2,14 +2,14 @@ import { cookies } from 'next/dist/client/components/headers'
 
 import { CartFragment, cartFragment } from '~/shopify/sdk-gen/fragments'
 import { storefront } from '~/shopify/sdk-gen/sdk'
-import { cartCookieKey } from '~/shopify/storefront-hooks'
+import { cartCookieKey } from '~/shopify/storefront-hooks/cart-cookie-key'
 
 import CartButton from './cart-btn'
 import Logo from './logo'
 
 export default async function Nav() {
   const cookieStore = cookies()
-  const cookie = cookieStore.get(cartCookieKey + '-cart-id')
+  const cookie = cookieStore.get(cartCookieKey)
   const cartId = cookie?.value
 
   let prefetchedCart: CartFragment | undefined = undefined

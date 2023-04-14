@@ -1,15 +1,17 @@
 import Image from 'next/image'
 
+import { ProductFragment } from '~/shopify/sdk-gen/fragments'
+
 import CartAddButton from './cart-btn-add'
 import SizeButton from './size-btn'
 
-export default function Product() {
+export default function Product({ data }: { data: ProductFragment }) {
   return (
     <>
       <div className="relative flex w-full flex-col gap-6 rounded-extra border-2 border-black bg-cream p-6 font-display drop-shadow-cart">
         <div className="flex justify-between">
           <div className="w-80 text-product font-black uppercase leading-trim text-black">
-            extra spicy bsmnt tee
+            {data.title}
           </div>
           <div className="w-52 text-2xl uppercase leading-tight text-black">
             The best tee you ever had, with a basement spice twist.

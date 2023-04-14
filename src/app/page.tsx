@@ -6,6 +6,8 @@ import Hero from './sections/hero'
 import Shop from './sections/shop'
 import Stack from './sections/stack'
 
+export const runtime = 'edge'
+
 export default async function Page() {
   return (
     <>
@@ -13,6 +15,7 @@ export default async function Page() {
         {/* @ts-expect-error rsc */}
         <Nav />
         <Hero />
+        {/* @ts-expect-error rsc */}
         <Shop />
         <Stack />
         <Footer />
