@@ -2,9 +2,9 @@ import Image from 'next/image'
 
 export default function CartFooter() {
   return (
-    <div className=" absolute bottom-0">
+    <div className="relative">
       <Image
-        className="relative top-[9px] z-30 ml-10 w-[760px]"
+        className="absolute top-[-9px] z-30 ml-10 w-[760px]"
         src="/primitives/cart-hr.svg"
         height={18}
         width={764}

@@ -5,7 +5,7 @@ export default function Grid() {
   const row = 2
   const num = 3
   return (
-    <div className="">
+    <div>
       <Image
         className="absolute -top-[10px] h-[18px] w-screen items-center justify-center"
         src="/primitives/hr.svg"
