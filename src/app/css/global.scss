@@ -38,6 +38,25 @@ html {
   // tweak if site is light mode.
   color-scheme: dark;
   background-color: black;
+  overflow: overlay;
+}
+
+::selection {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f765b8;
+  border-radius: 10px;
+  border: 2px solid rgb(0 0 0 / 0.6);
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(0 0 0 / 0.1);
 }
 
 body {

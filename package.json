@@ -19,6 +19,7 @@
     "@bsmnt/storefront-hooks": "^2.0.2",
     "@next/font": "^13.1.1",
     "@tanstack/react-query": "^4.29.1",
+    "@radix-ui/react-dialog": "^1.0.3",
     "clsx": "1.1.1",
     "hls.js": "1.1.5",
     "mousetrap": "1.6.5",
