@@ -1,14 +1,30 @@
 # workshop-nextjs-pizza
 
-## Featured Aspects of the Stack
+Simple t-shirt shop project strongly spiced with [basement.studio](https://basement.studio/) flavor for the Next.js & Pizza Workshop.
+
+
+## Our Commerce Toolkit
+
+This project is powered by the [BSMNT Commerce Toolkit](https://github.com/basementstudio/commerce-toolkit) that we built to build fast and reliable storefronts that could handle crazy amounts of traffic.
+
+- [shopmrbeast.com](https://shopmrbeast.com)
+- [karljacobs.co](https://karljacobs.co)
+- [shopmrballen.com](https://shopmrballen.com)
+- [ranboo.fashion](https://ranboo.fashion)
+
+
+## The Stack
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shopify](https://www.shopify.com/)
 
-## Things to Note
 
-- It comes with Inter (it's better to host fonts here rather than getting them from google fonts).
-- Pages, components, etc... are located under `/src`. If you are changing this, be sure to also update `tsconfig.json`'s `baseUrl`.
+## Resources
+
+- [Storefront Design - Figma File](https://www.figma.com/file/apST1EGGxQ5E2FiTLAbzlM/Untitled?node-id=0%3A1&t=q09OsJxJaDru8Yfc-1)
+
 
 ## Development
 
