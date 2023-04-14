@@ -1,14 +1,14 @@
 export default function Hero() {
   return (
-    <>
-      <header className="bg-cream pb-9 pt-24 md:pb-12 md:pt-48">
-        <div className="relative text-center font-display text-[16vw] font-black leading-trim  text-black ">
+    <section className="bg-cream pb-24 pt-48">
+      <h1 className="relative text-center">
+        <span className="font-display text-hero font-black leading-trim tracking-[-.02em] text-black">
           SPICY SHOP FT.
-        </div>
-        <div className="relative top-[-36px] text-center font-neon text-5xl text-pink  sm:-top-8 sm:text-6xl md:-top-12 md:text-8xl lg:text-9xl lg:top-[-96px] xl:text-9xl">
+        </span>
+        <span className="absolute -bottom-[40px] left-1/2 -translate-x-1/2 transform whitespace-nowrap text-center font-neon text-9xl text-pink">
           Julian Benegas
-        </div>
-      </header>
-    </>
+        </span>
+      </h1>
+    </section>
   )
 }

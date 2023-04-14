@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@next/font": "^13.1.1",
+    "@radix-ui/react-dialog": "^1.0.3",
     "clsx": "1.1.1",
     "hls.js": "1.1.5",
     "mousetrap": "1.6.5",
@@ -79,7 +80,9 @@
     "tabWidth": 2,
     "printWidth": 80,
     "trailingComma": "none",
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
