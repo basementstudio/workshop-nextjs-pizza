@@ -6,7 +6,8 @@ import Hero from './sections/hero'
 import Shop from './sections/shop'
 import Stack from './sections/stack'
 
-export const runtime = 'edge'
+// can't use edge runtime yet because of this issue: https://github.com/vercel/next.js/issues/43690
+// export const runtime = 'edge'
 
 export default async function Page() {
   return (
