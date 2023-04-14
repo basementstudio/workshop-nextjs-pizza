@@ -43,31 +43,31 @@ export default function Stack() {
           />
         </div>
 
-        <div className="absolute inset-0 h-full w-screen">
+        <div className="absolute inset-0 h-full">
           <Image
             className="relative left-2/3 top-16"
-            src="/cap.svg"
+            src="/primitives/cap.svg"
             height={156}
             width={218}
             alt="cap"
           />
           <Image
             className="relative left-32 top-48"
-            src="/pizza.svg"
+            src="/primitives/pizza.svg"
             height={134}
             width={144}
             alt="pizza"
           />
           <Image
             className="relative -top-24 left-64"
-            src="/star-pink.svg"
+            src="/primitives/star-pink.svg"
             height={36}
             width={36}
             alt="pink star"
           />
           <Image
             className="relative left-3/4 top-48"
-            src="/star-teal.svg"
+            src="/primitives/star-teal.svg"
             height={32}
             width={32}
             alt="teal star"

@@ -10,6 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: { xl: '1440px' },
       colors: {
         black: '#000000',
         cream: '#FFF5DC',
