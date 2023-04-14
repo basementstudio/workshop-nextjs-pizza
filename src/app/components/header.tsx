@@ -1,9 +1,9 @@
 import CartButton from './cart-btn'
 import Logo from './logo'
 
-export default function Nav() {
+export default function Header() {
   return (
-    <div className=" fixed top-0 z-50 min-w-full bg-cream">
+    <header className=" fixed top-0 z-50 min-w-full bg-cream">
       <div className="m-auto max-w-7xl">
         <nav className="  flex h-24 w-full max-w-7xl items-center justify-between bg-cream font-display text-base font-bold text-black">
           <Logo />
@@ -15,6 +15,6 @@ export default function Nav() {
           <CartButton />
         </nav>
       </div>
-    </div>
+    </header>
   )
 }
