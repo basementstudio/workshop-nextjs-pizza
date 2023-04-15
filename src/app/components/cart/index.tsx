@@ -10,7 +10,7 @@ import CartFooter from './cart-footer'
 import CartHeader from './cart-header'
 import CartProduct from './cart-product'
 
-export default function Cart() {
+const Cart = () => {
   const { isOn, handleOn, handleOff } = useToggleState()
   return (
     <RadixDialog.Root open={isOn}>
@@ -52,3 +52,5 @@ export default function Cart() {
     </RadixDialog.Root>
   )
 }
+
+export default Cart
