@@ -17,7 +17,7 @@ const Cart = () => {
       <RadixDialog.Trigger asChild>
         <button
           onClick={handleOn}
-          className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base "
+          className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base "
         >
           CART 0
         </button>
@@ -29,20 +29,21 @@ const Cart = () => {
         <RadixDialog.Content
           className={clsx(
             s.content,
-            'fixed right-0 top-0 z-50 flex h-screen w-[850px] flex-col rounded-bl-3xl border-l-2 border-black bg-cream'
+            'fixed right-0 top-0 z-50 flex h-screen w-full flex-col border-black bg-cream sm:rounded-bl-3xl sm:border-l-2 md:w-[850px]'
           )}
         >
           <CartHeader
             closeTrigger={
               <button
                 onClick={handleOff}
-                className="flex h-12 items-center justify-end rounded-full border-2 border-pink bg-black px-4 py-2 text-base font-bold leading-trim text-cream drop-shadow-close hover:bg-pink"
+                className="flex h-8 items-center justify-end rounded-full border border-pink bg-black px-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream sm:border-2 md:h-12 md:px-4 md:text-base"
               >
                 CLOSE &nbsp; X
               </button>
             }
           />
-          <div className="ml-12 mr-8 flex flex-1 flex-col gap-6 overflow-y-auto pr-4">
+          <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-5 sm:mx-12 sm:gap-6">
+            <CartProduct />
             <CartProduct />
             <CartProduct />
           </div>
