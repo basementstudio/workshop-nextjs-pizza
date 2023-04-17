@@ -3,23 +3,41 @@
 import * as RadixDialog from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 
-import { useToggleState } from '~/hooks/use-toggle-state'
+import { CartFragment } from '~/shopify/sdk-gen/fragments'
+import { useCartQuery, useCartOpenState } from '~/shopify/storefront-hooks'
 
 import s from './cart.module.scss'
 import CartFooter from './cart-footer'
 import CartHeader from './cart-header'
 import CartProduct from './cart-product'
+import { CartLine } from '~/shopify/sdk-gen/generated'
 
-const Cart = () => {
-  const { isOn, handleOn, handleOff } = useToggleState()
+const Cart = ({
+  prefetchedCart
+}: {
+  prefetchedCart: CartFragment | undefined
+}) => {
+  const cartOpenState = useCartOpenState()
+  const cartQuery = useCartQuery({
+    queryOptions: { initialData: prefetchedCart }
+  })
+
   return (
-    <RadixDialog.Root open={isOn}>
+    <RadixDialog.Root
+      open={cartOpenState.isOpen}
+      onOpenChange={(isOpen) => {
+        if (isOpen) {
+          cartOpenState.open()
+        } else {
+          cartOpenState.close()
+        }
+      }}
+    >
       <RadixDialog.Trigger asChild>
-        <button
-          onClick={handleOn}
-          className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base "
-        >
-          CART 0
+        <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base">
+          CART<span className="-mt-2 inline-block">(</span>
+          {cartQuery.data?.totalQuantity ?? 0}
+          <span className="-mt-2 inline-block">)</span>
         </button>
       </RadixDialog.Trigger>
       <RadixDialog.Portal>
@@ -34,20 +52,22 @@ const Cart = () => {
         >
           <CartHeader
             closeTrigger={
-              <button
-                onClick={handleOff}
-                className="flex h-8 items-center justify-end rounded-full border border-pink bg-black px-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream sm:border-2 md:h-12 md:px-4 md:text-base"
-              >
-                CLOSE &nbsp; X
-              </button>
+              <RadixDialog.Close asChild>
+                <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base text-black">
+                  CLOSE &nbsp; X
+                </button>
+              </RadixDialog.Close>
             }
           />
           <div className="flex flex-1 flex-col gap-4 overflow-y-auto px-5 sm:mx-12 sm:gap-6">
-            <CartProduct />
-            <CartProduct />
-            <CartProduct />
+            {cartQuery.data?.lines.edges.map(({ node: line }) => (
+              <CartProduct key={line.id} data={line as CartLine} />
+            ))}
           </div>
-          <CartFooter />
+          <CartFooter
+            checkoutUrl={cartQuery.data?.checkoutUrl}
+            total={cartQuery.data?.cost.subtotalAmount.amount}
+          />
         </RadixDialog.Content>
       </RadixDialog.Portal>
     </RadixDialog.Root>

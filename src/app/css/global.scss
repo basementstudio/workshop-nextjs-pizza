@@ -1,9 +1,9 @@
+@import './helpers';
+@import './reset.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './helpers';
-@import './reset.css';
 
 @layer base {
   .font-outline {

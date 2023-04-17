@@ -8,7 +8,8 @@ const config = {
   reactStrictMode: false,
   swcMinify: true,
   images: {
-    formats: ['image/avif', 'image/webp']
+    formats: ['image/avif', 'image/webp'],
+    domains: ['cdn.shopify.com']
   },
   experimental: { appDir: true }
 }
