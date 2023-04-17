@@ -1,10 +1,17 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 const Logo = () => {
   return (
-    <>
-      <div className="font-outline justify-center font-display text-3xl font-black text-teal drop-shadow-cart md:text-base">
-        NEXT JS & PIZZA
-      </div>
-    </>
+    <Link href={'/'} aria-label="go home">
+      <Image
+        className="h-5 w-32 sm:h-8 sm:w-[212px]"
+        src="/logos/header-logo.svg"
+        height={32}
+        width={212}
+        alt="logo nextjs"
+      />
+    </Link>
   )
 }
 
