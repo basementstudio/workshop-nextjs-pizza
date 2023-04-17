@@ -92,10 +92,10 @@ export default function CartProduct({ data }: { data: CartLine }) {
         <div className="w-full rounded-3xl bg-black">
           <Image
             className="rounded-extra"
-            src="/tees/tee-basement-studio.png"
-            height={348}
-            width={348}
-            alt="tee basement"
+            src={data.merchandise.image?.url}
+            height={data.merchandise.image?.height}
+            width={data.merchandise.image?.width}
+            alt={data.merchandise.image?.altText ?? ''}
           />
         </div>
       </div>
