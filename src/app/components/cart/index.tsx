@@ -34,7 +34,7 @@ const Cart = ({
       }}
     >
       <RadixDialog.Trigger asChild>
-        <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base">
+        <button className="flex transition-colors ease-in h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base">
           CART<span className="-mt-2 inline-block">(</span>
           {cartQuery.data?.totalQuantity ?? 0}
           <span className="-mt-2 inline-block">)</span>
@@ -53,7 +53,7 @@ const Cart = ({
           <CartHeader
             closeTrigger={
               <RadixDialog.Close asChild>
-                <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim text-black drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base">
+                <button className="transition-colors ease-in flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim text-black drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base">
                   CLOSE &nbsp; X
                 </button>
               </RadixDialog.Close>

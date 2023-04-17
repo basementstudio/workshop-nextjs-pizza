@@ -28,7 +28,7 @@ const Product = ({ data }: { data: ProductFragment }) => {
     ?.values
 
   const onAddToCart = useCallback(async () => {
-    if (!selectedVariant) return
+    if (!selectedVariant || !data.availableForSale) return
     handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
       onSuccess() {
         openCart()
@@ -64,7 +64,8 @@ const Product = ({ data }: { data: ProductFragment }) => {
           alt=""
         />
       </div>
-      <div className="w-full rounded-xl bg-black md:rounded-3xl">
+      <div className="relative w-full overflow-hidden rounded-xl bg-black md:rounded-3xl">
+        {!data.availableForSale && <SoldOut />}
         {data.images.edges[0]?.node.url && (
           <Image
             className="rounded-extra "
@@ -101,7 +102,7 @@ const Product = ({ data }: { data: ProductFragment }) => {
           </div>
           <button
             disabled={isAdding}
-            className="flex h-6 items-center justify-center rounded-full border border-cream bg-teal px-2 text-center font-display text-[16px] font-bold leading-trim text-black hover:bg-black hover:text-cream disabled:bg-black disabled:text-cream sm:h-10 sm:text-2xl md:w-52 md:px-4 xl:h-12 xl:border-2 xl:text-base"
+            className="flex transition-colors ease-in h-6 items-center justify-center rounded-full border border-cream bg-teal px-2 text-center font-display text-[16px] font-bold leading-trim text-black hover:bg-black hover:text-cream disabled:bg-black disabled:text-cream sm:h-10 sm:text-2xl md:w-52 md:px-4 xl:h-12 xl:border-2 xl:text-base"
           >
             {isAdding ? 'ADDING...' : 'ADD TO CART'}
           </button>
@@ -110,5 +111,13 @@ const Product = ({ data }: { data: ProductFragment }) => {
     </form>
   )
 }
+
+const SoldOut = () => (
+  <div className="absolute inset-0 z-50 grid cursor-not-allowed place-items-center bg-black/70">
+    <p className="grid h-[155px] w-[348px] place-items-center rounded-[99%] border border-solid border-black bg-cream text-[64px] font-bold uppercase text-black">
+      Sold Out
+    </p>
+  </div>
+)
 
 export default Product
