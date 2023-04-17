@@ -5,6 +5,7 @@ import localFont from '@next/font/local'
 import type { Metadata } from 'next'
 
 import Header from './components/header'
+import { Providers } from './providers'
 import Footer from './sections/footer'
 
 const nichrome = localFont({
@@ -47,9 +48,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
       <body className="bg-cream">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          {/* @ts-expect-error rsc */}
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
