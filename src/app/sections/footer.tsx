@@ -11,7 +11,7 @@ const resources = [
   },
   {
     name: 'FIGMA',
-    url: 'https://figma.com/'
+    url: 'https://www.figma.com/file/apST1EGGxQ5E2FiTLAbzlM/Spicy-Shop---Next.js-%26-Pizza?node-id=0%3A1&t=HEBzqvtkL4wv4x1q-1'
   }
 ]
 
