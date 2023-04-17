@@ -11,7 +11,6 @@ import {
   useProductFormHelper
 } from '~/shopify/storefront-hooks'
 
-import Ellipse from './primitives/ellipse'
 import SizeButton from './size-btn'
 
 const Product = ({ data }: { data: ProductFragment }) => {
