@@ -3,7 +3,7 @@ import Image from 'next/image'
 const stack = [
   {
     name: 'Next.js',
-    url: 'https://nextjs.com/',
+    url: 'https://nextjs.org/',
     logo: '/logos/next.svg',
     alt: 'logo nextjs'
   },
