@@ -21,15 +21,7 @@ export default function CartProduct() {
               <SizeButton size={'+'} />
             </div>
           </div>
-          <div className="flex h-12">
-            <p className="text-base font-bold">SIZE</p>
-            <div className="ml-6 flex gap-3">
-              <SizeButton size={'S'} />
-              <SizeButton size={'M'} selected={true} />
-              <SizeButton size={'L'} />
-              <SizeButton size={'XL'} />
-            </div>
-          </div>
+
           <div className="flex h-12 text-base ">
             <p className="font-bold">PRICE</p>
             <p className="ml-6 flex gap-3">$30</p>
