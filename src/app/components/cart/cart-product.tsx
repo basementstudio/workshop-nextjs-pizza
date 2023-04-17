@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from 'clsx'
 import Image from 'next/image'
 import { useCallback } from 'react'
 
@@ -34,77 +35,87 @@ const CartProduct = ({ data }: { data: CartLine }) => {
   }, [data.id, data.quantity, handleRemoveLineItem, onUpdateLineItem])
 
   return (
-    <>
-      <div className="relative flex flex-row-reverse gap-4 rounded-xl border border-black bg-teal p-3 font-display drop-shadow-cart first:mt-5 last:mb-10 sm:gap-6 sm:rounded-extra sm:border-2 sm:p-6 sm:first:mt-10">
-        <div className="flex flex-col gap-2 text-black sm:justify-between sm:gap-4">
-          <div className="text-3xl font-black uppercase leading-trim sm:text-product md:w-80">
-            <p>{data.merchandise.product.title}</p>
-          </div>
-          <div className="text-xs uppercase leading-tight text-black sm:text-2xl md:w-52">
-            <p>{data.merchandise.product.description}</p>
-          </div>
-          <div className="flex h-6 items-center sm:h-12">
-            <p className="text-xs font-bold sm:text-base">QUANTITY</p>
-            <div className="ml-3 flex gap-2 sm:ml-6 sm:gap-3">
-              <button
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
-                onClick={handleRemove}
-                disabled={isUpdating || isRemoving}
-              >
-                -
-              </button>
-              {isUpdating || isRemoving ? (
-                <TailSpinSvg className='h-6 w-6 sm:h-[48px] sm:w-[48px]'/>
-              ) : (
-                <p className="relative flex h-6 w-6 items-center justify-center rounded-full border border-black bg-cream text-center font-display text-[16px] leading-trim text-black aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base">
-                  {data.quantity}
-                </p>
-              )}
-              <button
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
-                onClick={handleAdd}
-                disabled={isUpdating || isRemoving}
-              >
-                +
-              </button>
-            </div>
-          </div>
-
-          <div className="flex h-6 items-center text-xs sm:h-12 sm:text-base">
-            <p className="text-xs font-bold sm:text-base">SIZE</p>
-            <div className="ml-3 flex gap-3 sm:ml-6">
-              {data.merchandise.selectedOptions.map(
-                (option, idx) =>
-                  option.name === 'Size' && (
-                    <p
-                      key={idx}
-                      className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-cream text-center font-display text-[16px] leading-trim text-black aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
-                    >
-                      {option.value}
-                    </p>
-                  )
-              )}
-            </div>
-          </div>
-          <div className="flex h-6 text-xs sm:h-12 sm:text-base">
-            <p className="font-bold">PRICE</p>
-            <p className="ml-3 flex sm:ml-6">
-              ${data.merchandise.product.priceRange.minVariantPrice.amount}
-            </p>
+    <div
+      className={clsx(
+        isRemoving && 'opacity-50',
+        'relative flex flex-row-reverse gap-4 rounded-xl border border-black bg-teal p-3 font-display drop-shadow-cart first:mt-5 last:mb-10 sm:gap-6 sm:rounded-extra sm:border-2 sm:p-6 sm:first:mt-10'
+      )}
+    >
+      <div className="flex flex-col gap-2 text-black sm:justify-between sm:gap-4">
+        <div className="text-3xl font-black uppercase leading-trim sm:text-product md:w-80">
+          <p>{data.merchandise.product.title}</p>
+        </div>
+        <div className="text-xs uppercase leading-tight text-black sm:text-2xl md:w-52">
+          <p>{data.merchandise.product.description}</p>
+        </div>
+        <div className="flex h-6 items-center sm:h-12">
+          <p className="text-xs font-bold sm:text-base">QUANTITY</p>
+          <div className="ml-3 flex gap-2 sm:ml-6 sm:gap-3">
+            <button
+              className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+              onClick={handleRemove}
+              disabled={isUpdating}
+            >
+              -
+            </button>
+            {isUpdating ? (
+              <TailSpinSvg className="h-6 w-6 sm:h-[48px] sm:w-[48px]" />
+            ) : (
+              <p className="relative flex h-6 w-6 items-center justify-center rounded-full border border-black bg-cream text-center font-display text-[16px] leading-trim text-black aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base">
+                {data.quantity}
+              </p>
+            )}
+            <button
+              className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+              onClick={handleAdd}
+              disabled={isUpdating}
+            >
+              +
+            </button>
           </div>
         </div>
 
-        <div className="rounded-md bg-black sm:h-[160px] sm:rounded-3xl">
-          <Image
-            className="rounded-md sm:rounded-3xl"
-            src={data.merchandise.image?.url}
-            height={data.merchandise.image?.height}
-            width={data.merchandise.image?.width}
-            alt={data.merchandise.image?.altText ?? ''}
-          />
+        <div className="flex h-6 items-center text-xs sm:h-12 sm:text-base">
+          <p className="text-xs font-bold sm:text-base">SIZE</p>
+          <div className="ml-3 flex gap-3 sm:ml-6">
+            {data.merchandise.selectedOptions.map(
+              (option, idx) =>
+                option.name === 'Size' && (
+                  <p
+                    key={idx}
+                    className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-cream text-center font-display text-[16px] leading-trim text-black aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+                  >
+                    {option.value}
+                  </p>
+                )
+            )}
+          </div>
+        </div>
+        <div className="flex h-6 text-xs leading-[1] sm:h-12 sm:text-base">
+          <p className="font-bold">PRICE</p>
+          <p className="ml-3 flex sm:ml-6">
+            ${data.merchandise.product.priceRange.minVariantPrice.amount}
+          </p>
+
+          <button
+            onClick={handleRemoveLineItem}
+            className="ml-auto flex font-bold uppercase"
+          >
+            Remove
+          </button>
         </div>
       </div>
-    </>
+
+      <div className="rounded-md bg-black sm:h-[160px] sm:rounded-3xl">
+        <Image
+          className="rounded-md sm:rounded-3xl"
+          src={data.merchandise.image?.url}
+          height={data.merchandise.image?.height}
+          width={data.merchandise.image?.width}
+          alt={data.merchandise.image?.altText ?? ''}
+        />
+      </div>
+    </div>
   )
 }
 
@@ -117,7 +128,13 @@ const TailSpinSvg = ({ className }: { className: string }) => (
     className={className}
   >
     <defs>
-      <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a-tail-spin">
+      <linearGradient
+        x1="8.042%"
+        y1="0%"
+        x2="65.682%"
+        y2="23.865%"
+        id="a-tail-spin"
+      >
         <stop stop-color="#000" stop-opacity="0" offset="0%" />
         <stop stop-color="#000" stop-opacity=".631" offset="63.146%" />
         <stop stop-color="#000" offset="100%" />
