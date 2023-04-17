@@ -64,7 +64,10 @@ export default function Cart({
               <CartProduct key={line.id} data={line as CartLine} />
             ))}
           </div>
-          <CartFooter total={cartQuery.data?.cost.subtotalAmount.amount} />
+          <CartFooter
+            checkoutUrl={cartQuery.data?.checkoutUrl}
+            total={cartQuery.data?.cost.subtotalAmount.amount}
+          />
         </RadixDialog.Content>
       </RadixDialog.Portal>
     </RadixDialog.Root>

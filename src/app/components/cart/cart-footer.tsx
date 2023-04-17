@@ -1,6 +1,12 @@
 import Image from 'next/image'
 
-export default function CartFooter({total}: {total: number}) {
+export default function CartFooter({
+  total,
+  checkoutUrl
+}: {
+  total: number
+  checkoutUrl: string
+}) {
   return (
     <div className="relative">
       <Image
@@ -13,9 +19,14 @@ export default function CartFooter({total}: {total: number}) {
       />
       <div className="flex h-36 w-[850px] items-center justify-between rounded-bl-3xl bg-cream px-12 font-display">
         <div className="text-5xl font-black text-black">TOTAL ${total}</div>
-        <button className="font-outline justify-center font-display text-5xl font-black tracking-widest text-pink drop-shadow-cart hover:text-teal">
+        <a
+          target="_blank"
+          rel="noopener"
+          href={checkoutUrl}
+          className="font-outline inline-block justify-center font-display text-5xl font-black tracking-widest text-pink drop-shadow-cart hover:text-teal"
+        >
           CHECKOUT
-        </button>
+        </a>
       </div>
     </div>
   )
