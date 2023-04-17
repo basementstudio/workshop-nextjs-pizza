@@ -51,12 +51,12 @@ export default function Product({ data }: { data: ProductFragment }) {
           <p>{data.title}</p>
         </div>
         <div className="w-32 text-[16px] uppercase leading-tight text-black lg:w-52 lg:text-2xl">
-          <p>the best tee you ever had, made with the basement spices</p>
+          <p>{data.description}</p>
         </div>
       </div>
       <div className="absolute left-24 z-10 w-20 font-black md:w-36 lg:left-48 lg:top-16">
         <div className="z-20 justify-center pt-1 text-center text-lg text-pink md:pt-4 md:text-base">
-          <p>PRICE</p>
+          <p>${data.priceRange.minVariantPrice.amount}</p>
         </div>
         <Image
           className="absolute top-0 -z-10"
