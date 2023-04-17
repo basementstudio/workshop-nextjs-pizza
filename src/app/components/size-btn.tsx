@@ -1,5 +1,7 @@
 'use client'
 
+import clsx from 'clsx'
+
 const SizeButton = ({
   size,
   selected,
@@ -15,10 +17,12 @@ const SizeButton = ({
     <>
       <button
         type="button"
-        aria-selected={selected}
-        className="flex transition-colors ease-in h-6 w-6 items-center justify-center rounded-full border border-cream bg-black text-center font-display text-[16px] leading-trim text-cream hover:bg-teal disabled:opacity-30 aria-selected:bg-teal aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+        className={clsx(
+          selected && 'bg-teal text-black',
+          'flex h-6 w-6 items-center justify-center rounded-full border border-cream bg-black text-center font-display text-[16px] leading-trim text-cream transition-colors ease-in hover:bg-teal disabled:opacity-30 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base'
+        )}
         onClick={onClick}
-        disabled={disabled || selected}
+        disabled={disabled}
       >
         {size}
       </button>
