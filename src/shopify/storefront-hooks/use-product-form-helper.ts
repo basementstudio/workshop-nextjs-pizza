@@ -38,7 +38,7 @@ export const useProductFormHelper = (product: BareBonesProduct) => {
 
   const selectedVariant = useMemo(() => {
     if (product.variants.nodes.length === 1) return product.variants.nodes[0]
-    
+
     const _selectedOptions = Object.entries(selectedOptions)
     const selectedVariant = product.variants.nodes.find((variant) => {
       return _selectedOptions.every(([name, value]) =>

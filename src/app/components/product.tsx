@@ -24,9 +24,8 @@ export default function Product({ data }: { data: ProductFragment }) {
     useAddLineItemsToCartMutation()
   const openCart = useCartOpenState((s) => s.open)
 
-  const sizeVariants = optionsToSelect.filter(
-    ({ name }) => name === 'Size'
-  )[0]!!.values
+  const sizeVariants = optionsToSelect.filter(({ name }) => name === 'Size')[0]
+    ?.values
 
   const onAddToCart = useCallback(async () => {
     // console.log(selectedOptions.size)
@@ -76,7 +75,7 @@ export default function Product({ data }: { data: ProductFragment }) {
         />
         <div className="flex h-12 items-center justify-between px-4 md:h-20 md:px-6 lg:h-24">
           <div className="relative flex gap-2 sm:gap-3 ">
-            {sizeVariants.map((opt, idx) => {
+            {sizeVariants?.map((opt, idx) => {
               return (
                 <SizeButton
                   key={idx}
