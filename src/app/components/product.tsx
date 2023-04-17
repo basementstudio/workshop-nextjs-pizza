@@ -65,13 +65,15 @@ export default function Product({ data }: { data: ProductFragment }) {
         />
       </div>
       <div className="w-full rounded-xl bg-black md:rounded-3xl">
-        <Image
-          className="rounded-extra "
-          src="/tees/tee-basement-studio.png"
-          height={511}
-          width={582}
-          alt="tee basement"
-        />
+        {data.images.edges[0]?.node.url && (
+          <Image
+            className="rounded-extra "
+            src={data.images.edges[0]?.node.url}
+            height={data.images.edges[0]?.node.height}
+            width={data.images.edges[0]?.node.width}
+            alt={data.images.edges[0]?.node.altText ?? ''}
+          />
+        )}
         <div className="flex h-12 items-center justify-between px-4 md:h-20 md:px-6 lg:h-24">
           <div className="relative flex gap-2 sm:gap-3 ">
             {sizeVariants?.map((opt, idx) => {

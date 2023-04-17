@@ -45,6 +45,12 @@ export const productFragment = {
   id: true,
   title: true,
   description: true,
+  images: {
+    __args: { first: 5 },
+    edges: {
+      node: imageFragment
+    }
+  },
   options: {
     __args: { first: 25 },
     id: true,
