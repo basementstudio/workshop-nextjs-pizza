@@ -12,7 +12,8 @@ export const {
   useAddLineItemsToCartMutation,
   useOptimisticCartUpdate,
   useRemoveLineItemsFromCartMutation,
-  useUpdateLineItemsInCartMutation
+  useUpdateLineItemsInCartMutation,
+  useCartOpenState
 } = createStorefrontHooks({
   cartCookieKey,
   fetchers: {
@@ -107,22 +108,6 @@ export const {
     }
   },
   createCartIfNotFound: true
-})
-
-type CartStore = {
-  isOpen: boolean
-  toggle: () => void
-  open: () => void
-  close: () => void
-}
-
-export const useCartOpenState = create<CartStore>((set) => {
-  return {
-    isOpen: false,
-    toggle: () => set((state) => ({ isOpen: !state.isOpen })),
-    open: () => set({ isOpen: true }),
-    close: () => set({ isOpen: false })
-  }
 })
 
 export { useProductFormHelper } from './use-product-form-helper'

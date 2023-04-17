@@ -22,7 +22,7 @@ export default function Product({ data }: { data: ProductFragment }) {
   } = useProductFormHelper(data)
   const { mutate: handleAddToCart, isLoading: isAdding } =
     useAddLineItemsToCartMutation()
-  const openCart = useCartOpenState((s) => s.open)
+  const openCart = useCartOpenState().open
 
   const sizeVariants = optionsToSelect.filter(({ name }) => name === 'Size')[0]
     ?.values

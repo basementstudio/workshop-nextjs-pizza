@@ -4,7 +4,7 @@ import * as RadixDialog from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 
 import { CartFragment } from '~/shopify/sdk-gen/fragments'
-import { useCartOpenState, useCartQuery } from '~/shopify/storefront-hooks'
+import { useCartQuery, useCartOpenState } from '~/shopify/storefront-hooks'
 
 import s from './cart.module.scss'
 import CartFooter from './cart-footer'
