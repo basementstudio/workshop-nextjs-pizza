@@ -1,13 +1,16 @@
 'use client'
 
+import clsx from 'clsx'
 import Image from 'next/image'
 
 const CartFooter = ({
   total,
-  checkoutUrl
+  checkoutUrl,
+  emptyState
 }: {
   total: number
   checkoutUrl: string
+  emptyState: boolean
 }) => {
   return (
     <div className="relative">
@@ -27,7 +30,10 @@ const CartFooter = ({
           target="_blank"
           rel="noopener"
           href={checkoutUrl}
-          className="transition-colors ease-in font-outline inline-block justify-center font-display text-2xl font-black tracking-widest text-pink drop-shadow-cart hover:text-teal sm:text-5xl"
+          className={clsx(
+            emptyState ? 'pointer-events-none opacity-50' : 'hover:text-teal',
+            'font-outline inline-block justify-center font-display text-2xl font-black tracking-widest text-pink drop-shadow-cart transition-colors ease-in  sm:text-5xl'
+          )}
         >
           CHECKOUT
         </a>
