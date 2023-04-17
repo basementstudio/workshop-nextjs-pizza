@@ -1,4 +1,6 @@
-export default function SizeButton({
+'use client'
+
+const SizeButton = ({
   size,
   selected,
   onClick,
@@ -8,7 +10,7 @@ export default function SizeButton({
   selected?: boolean
   onClick?: () => void
   disabled?: boolean
-}) {
+}) => {
   return (
     <>
       <button
@@ -23,3 +25,5 @@ export default function SizeButton({
     </>
   )
 }
+
+export default SizeButton

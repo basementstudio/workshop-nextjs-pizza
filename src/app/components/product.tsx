@@ -1,19 +1,19 @@
 'use client'
 
 import Image from 'next/image'
-
-import { ProductFragment } from '~/shopify/sdk-gen/fragments'
 import { useCallback } from 'react'
 
-import SizeButton from './size-btn'
+import { isDev } from '~/lib/constants'
+import { ProductFragment } from '~/shopify/sdk-gen/fragments'
 import {
   useAddLineItemsToCartMutation,
   useCartOpenState,
   useProductFormHelper
 } from '~/shopify/storefront-hooks'
-import { isDev } from '~/lib/constants'
 
-export default function Product({ data }: { data: ProductFragment }) {
+import SizeButton from './size-btn'
+
+const Product = ({ data }: { data: ProductFragment }) => {
   const {
     optionsToSelect,
     selectedOptions,
@@ -110,3 +110,5 @@ export default function Product({ data }: { data: ProductFragment }) {
     </form>
   )
 }
+
+export default Product

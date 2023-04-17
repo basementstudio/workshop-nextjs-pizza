@@ -40,11 +40,7 @@ export const metadata: Metadata = {
   description: 'to do'
 }
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
       <body className="bg-cream">
@@ -58,3 +54,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+export default RootLayout

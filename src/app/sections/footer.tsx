@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Footer() {
+const Footer = () => {
   return (
     <>
       <footer className="-mt-8 bg-black pb-32">
@@ -13,9 +13,9 @@ export default function Footer() {
               width={185}
               alt="logo basement"
             />
-            <div className="pb-12 pt-[50px] text-center leading-tight lg:text-left">
+            <p className="pb-12 pt-[50px] text-center leading-tight lg:text-left">
               our work is serious, <br /> we are not.
-            </div>
+            </p>
             <Image
               className="h-[48px] sm:h-[84px]"
               src="/logos/next-pizza.svg"
@@ -26,9 +26,9 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col justify-end gap-6 text-center leading-tight lg:text-right">
-            <div className="font-bold text-teal">
+            <p className="font-bold text-teal">
               bsmnt <br /> resources
-            </div>
+            </p>
             <ul className="flex flex-col gap-2">
               <li>
                 <a
@@ -182,3 +182,5 @@ export default function Footer() {
     </>
   )
 }
+
+export default Footer

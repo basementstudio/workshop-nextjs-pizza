@@ -1,4 +1,4 @@
-export default function Hero() {
+const Hero = () => {
   return (
     <section className="bg-cream pb-9 pt-24 md:pb-12 md:pt-48">
       <h1 className="relative w-full text-center">
@@ -12,3 +12,5 @@ export default function Hero() {
     </section>
   )
 }
+
+export default Hero

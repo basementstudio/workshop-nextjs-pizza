@@ -1,9 +1,11 @@
-export default function Logo() {
+const Logo = () => {
   return (
     <>
-      <div className="drop-shadow-cart font-outline justify-center font-display text-3xl md:text-base font-black text-teal">
+      <div className="font-outline justify-center font-display text-3xl font-black text-teal drop-shadow-cart md:text-base">
         NEXT JS & PIZZA
       </div>
     </>
   )
 }
+
+export default Logo

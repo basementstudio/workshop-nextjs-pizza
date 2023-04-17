@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Stack() {
+const Stack = () => {
   return (
     <>
       <section className="flex flex-col gap-12 rounded-extra bg-cream py-36 text-center font-display drop-shadow-section md:py-48">
@@ -82,3 +82,5 @@ export default function Stack() {
     </>
   )
 }
+
+export default Stack

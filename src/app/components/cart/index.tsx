@@ -4,13 +4,13 @@ import * as RadixDialog from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 
 import { CartFragment } from '~/shopify/sdk-gen/fragments'
-import { useCartQuery, useCartOpenState } from '~/shopify/storefront-hooks'
+import { CartLine } from '~/shopify/sdk-gen/generated'
+import { useCartOpenState, useCartQuery } from '~/shopify/storefront-hooks'
 
 import s from './cart.module.scss'
 import CartFooter from './cart-footer'
 import CartHeader from './cart-header'
 import CartProduct from './cart-product'
-import { CartLine } from '~/shopify/sdk-gen/generated'
 
 const Cart = ({
   prefetchedCart
@@ -53,7 +53,7 @@ const Cart = ({
           <CartHeader
             closeTrigger={
               <RadixDialog.Close asChild>
-                <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base text-black">
+                <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold  leading-trim text-black drop-shadow-cart hover:bg-cream md:h-12 md:px-4 md:text-base">
                   CLOSE &nbsp; X
                 </button>
               </RadixDialog.Close>

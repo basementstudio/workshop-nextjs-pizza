@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Fragment } from 'react'
 
-export default function Grid() {
+const Grid = () => {
   const row = 2
   const num = 3
   return (
@@ -43,3 +43,5 @@ export default function Grid() {
     </div>
   )
 }
+
+export default Grid
