@@ -17,6 +17,10 @@
     box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
   }
+
+  .ellipse {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
 }
 
 :root {
@@ -42,17 +46,17 @@ html {
 }
 
 ::selection {
-  background-color: #fff;
+  background-color: #53e5cf;
+  // color: rgb(38 38 38);
+  color: #000;
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  @apply w-2 sm:w-3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f765b8;
-  border-radius: 10px;
-  border: 2px solid rgb(0 0 0 / 0.6);
+  @apply rounded-full border border-solid border-black bg-pink sm:border-2;
 }
 
 ::-webkit-scrollbar-track {

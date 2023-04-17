@@ -33,7 +33,6 @@ module.exports = {
       },
       dropShadow: {
         cart: '0px 2px 0px #000000',
-        close: '0px 2px 0px #000000',
         section: '0px 8px 0px #6BE5D0'
       },
       borderRadius: {

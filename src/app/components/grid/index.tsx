@@ -1,14 +1,22 @@
 import Image from 'next/image'
 import { Fragment } from 'react'
 
-export default function Grid() {
+const Grid = () => {
   const row = 2
   const num = 3
   return (
     <div>
       <Image
-        className="absolute -top-[10px] h-[18px] w-screen items-center justify-center"
+        className="absolute -top-[10px] hidden h-[18px] w-screen items-center justify-center"
         src="/primitives/hr.svg"
+        height={18}
+        width={1920}
+        alt=""
+        loading="eager"
+      />
+      <Image
+        className="absolute -top-[10px] h-[18px] w-screen items-center justify-center"
+        src="/primitives/cart-hr.svg"
         height={18}
         width={1920}
         alt=""
@@ -32,8 +40,16 @@ export default function Grid() {
           </div>
         ))}
         <Image
-          className="relative -top-[9px] h-[18px] w-[1920px] items-center justify-center"
+          className="relative -top-[9px] hidden h-[18px] w-screen items-center justify-center"
           src="/primitives/hr.svg"
+          height={18}
+          width={1920}
+          alt=""
+          loading="eager"
+        />
+        <Image
+          className="relative -top-[9px] h-[18px] w-screen items-center justify-center"
+          src="/primitives/cart-hr.svg"
           height={18}
           width={1920}
           alt=""
@@ -43,3 +59,5 @@ export default function Grid() {
     </div>
   )
 }
+
+export default Grid

@@ -1,19 +1,19 @@
 'use client'
 
 import Image from 'next/image'
-
-import { ProductFragment } from '~/shopify/sdk-gen/fragments'
 import { useCallback } from 'react'
 
-import SizeButton from './size-btn'
+import { isDev } from '~/lib/constants'
+import { ProductFragment } from '~/shopify/sdk-gen/fragments'
 import {
   useAddLineItemsToCartMutation,
   useCartOpenState,
   useProductFormHelper
 } from '~/shopify/storefront-hooks'
-import { isDev } from '~/lib/constants'
 
-export default function Product({ data }: { data: ProductFragment }) {
+import SizeButton from './size-btn'
+
+const Product = ({ data }: { data: ProductFragment }) => {
   const {
     optionsToSelect,
     selectedOptions,
@@ -28,7 +28,7 @@ export default function Product({ data }: { data: ProductFragment }) {
     ?.values
 
   const onAddToCart = useCallback(async () => {
-    if (!selectedVariant) return
+    if (!selectedVariant || !data.availableForSale) return
     handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
       onSuccess() {
         openCart()
@@ -52,19 +52,13 @@ export default function Product({ data }: { data: ProductFragment }) {
           <p>{data.description}</p>
         </div>
       </div>
-      <div className="absolute left-24 z-10 w-20 font-black md:w-36 lg:left-48 lg:top-16">
-        <div className="z-20 justify-center pt-1 text-center text-lg text-pink md:pt-4 md:text-base">
+      <div className="absolute left-24 z-10 w-20 sm:left-48 sm:top-16 md:w-36">
+        <div className="ellipse items-center justify-center border border-black bg-cream py-1 text-center font-black text-pink sm:border-2 md:h-[64px] md:w-[144px] md:pt-1 md:text-base">
           <p>${data.priceRange.minVariantPrice.amount}</p>
         </div>
-        <Image
-          className="absolute top-0 -z-10"
-          src="/primitives/ellipse.svg"
-          height={64}
-          width={144}
-          alt=""
-        />
       </div>
-      <div className="w-full rounded-xl bg-black md:rounded-3xl">
+      <div className="relative w-full overflow-hidden rounded-xl bg-black md:rounded-3xl">
+        {!data.availableForSale && <SoldOut />}
         {data.images.edges[0]?.node.url && (
           <Image
             className="rounded-extra "
@@ -101,12 +95,22 @@ export default function Product({ data }: { data: ProductFragment }) {
           </div>
           <button
             disabled={isAdding}
-            className="flex h-6 items-center justify-end rounded-full border border-cream bg-teal px-2 font-display text-[16px] font-bold leading-trim text-black hover:bg-black hover:text-cream sm:h-10 sm:text-2xl md:px-4 xl:h-12 xl:border-2 xl:text-base"
+            className="flex h-6 items-center justify-center rounded-full border border-cream bg-teal px-2 text-center font-display text-[16px] font-bold leading-trim text-black transition-colors ease-in hover:bg-black hover:text-cream disabled:bg-black disabled:text-cream sm:h-10 sm:text-2xl md:w-52 md:px-4 xl:h-12 xl:border-2 xl:text-base"
           >
-            ADD TO CART
+            {isAdding ? 'ADDING...' : 'ADD TO CART'}
           </button>
         </div>
       </div>
     </form>
   )
 }
+
+const SoldOut = () => (
+  <div className="absolute inset-0 z-50 grid cursor-not-allowed place-items-center bg-black/70">
+    <p className="grid h-[77px] w-[174px] place-items-center rounded-[99%] border border-solid border-black bg-cream text-base font-bold uppercase text-black sm:h-[155px] sm:w-[348px] sm:text-product">
+      Sold Out
+    </p>
+  </div>
+)
+
+export default Product
