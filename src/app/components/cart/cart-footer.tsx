@@ -27,7 +27,7 @@ const CartFooter = ({
           target="_blank"
           rel="noopener"
           href={checkoutUrl}
-          className="font-outline inline-block justify-center font-display text-2xl font-black tracking-widest text-pink drop-shadow-cart hover:text-teal sm:text-5xl"
+          className="transition-colors ease-in font-outline inline-block justify-center font-display text-2xl font-black tracking-widest text-pink drop-shadow-cart hover:text-teal sm:text-5xl"
         >
           CHECKOUT
         </a>
