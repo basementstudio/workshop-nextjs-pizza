@@ -38,7 +38,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
     <div
       className={clsx(
         isRemoving && 'opacity-50',
-        'relative flex flex-row-reverse gap-4 rounded-xl border border-black bg-teal p-3 font-display drop-shadow-cart first:mt-5 last:mb-10 sm:gap-6 sm:rounded-extra sm:border-2 sm:p-6 sm:first:mt-10'
+        'relative transition-opacity ease-in flex flex-row-reverse gap-4 rounded-xl border border-black bg-teal p-3 font-display drop-shadow-cart first:mt-5 last:mb-10 sm:gap-6 sm:rounded-extra sm:border-2 sm:p-6 sm:first:mt-10'
       )}
     >
       <div className="flex flex-col gap-2 text-black sm:justify-between sm:gap-4">
