@@ -12,7 +12,7 @@ const Shop = async () => {
     collection: {
       __args: { id: getShopifyGid('Collection', '442672120084') },
       products: {
-        __args: { first: 4 },
+        __args: { first: 4, sortKey: 'CREATED' },
         nodes: productFragment
       }
     }
@@ -22,7 +22,7 @@ const Shop = async () => {
     <div>
       <section className="relative z-30 w-full border-t-2 border-black bg-cream">
         <div className="relative z-10 mx-4 grid gap-5 bg-transparent pt-8 md:mx-12 md:max-w-6xl md:pt-24 lg:mx-auto lg:grid-cols-2 xl:max-w-7xl">
-          {collection?.products.nodes.reverse().map((product) => {
+          {collection?.products.nodes.map((product) => {
             return <Product key={product.id} data={product} />
           })}
         </div>
