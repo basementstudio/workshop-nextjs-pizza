@@ -28,7 +28,7 @@ const Product = ({ data }: { data: ProductFragment }) => {
     ?.values
 
   const onAddToCart = useCallback(async () => {
-    if (!selectedVariant) return
+    if (!selectedVariant || !data.availableForSale) return
     handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
       onSuccess() {
         openCart()
@@ -64,7 +64,8 @@ const Product = ({ data }: { data: ProductFragment }) => {
           alt=""
         />
       </div>
-      <div className="w-full rounded-xl bg-black md:rounded-3xl">
+      <div className="relative w-full overflow-hidden rounded-xl bg-black md:rounded-3xl">
+        {!data.availableForSale && <SoldOut />}
         {data.images.edges[0]?.node.url && (
           <Image
             className="rounded-extra "
@@ -110,5 +111,13 @@ const Product = ({ data }: { data: ProductFragment }) => {
     </form>
   )
 }
+
+const SoldOut = () => (
+  <div className="absolute inset-0 z-50 grid cursor-not-allowed place-items-center bg-black/70">
+    <p className="grid h-[155px] w-[348px] place-items-center rounded-[99%] border border-solid border-black bg-cream text-[64px] font-bold uppercase text-black">
+      Sold Out
+    </p>
+  </div>
+)
 
 export default Product
