@@ -11,7 +11,8 @@ export const {
   useAddLineItemsToCartMutation,
   useOptimisticCartUpdate,
   useRemoveLineItemsFromCartMutation,
-  useUpdateLineItemsInCartMutation
+  useUpdateLineItemsInCartMutation,
+  useCartOpenState
 } = createStorefrontHooks({
   cartCookieKey,
   fetchers: {
@@ -108,4 +109,4 @@ export const {
   createCartIfNotFound: true
 })
 
-// export { useProductFormHelper } from './use-product-form-helper'
+export { useProductFormHelper } from './use-product-form-helper'

@@ -4,7 +4,7 @@ import { storefront } from '~/shopify/sdk-gen/sdk'
 import Cart from './cart'
 import Logo from './logo'
 
-export default async function Nav() {
+export default async function Header() {
   /**
    * Comment this out because it would pass the whole page to a lambda, making the site slow.
    * We need to wait until this issue (https://github.com/vercel/next.js/issues/43690) is resolved
@@ -26,9 +26,9 @@ export default async function Nav() {
   /* end of code to comment out */
 
   return (
-    <header className=" fixed top-0 z-50 min-w-full bg-cream">
+    <header className="fixed top-0 z-50 min-w-full bg-cream">
       <div className="m-auto max-w-7xl">
-        <nav className="  flex h-24 w-full max-w-7xl items-center justify-between bg-cream font-display text-base font-bold text-black">
+        <nav className="flex h-24 w-full max-w-7xl items-center justify-between bg-cream font-display text-base font-bold text-black">
           <Logo />
           <div className="hidden gap-8 py-2 lg:flex">
             <div>HOME</div>

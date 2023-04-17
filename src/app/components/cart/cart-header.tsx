@@ -9,7 +9,6 @@ export default function CartHeader({
     <div className="relative flex flex-col">
       <div className="flex h-36 items-center justify-between bg-cream px-12 font-display">
         <p className="text-5xl font-black text-black">YOUR CART</p>
-
         {closeTrigger}
       </div>
 
