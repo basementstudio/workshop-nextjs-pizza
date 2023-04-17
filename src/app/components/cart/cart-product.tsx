@@ -53,9 +53,13 @@ const CartProduct = ({ data }: { data: CartLine }) => {
               >
                 -
               </button>
-              <p className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-cream text-center font-display text-[16px] leading-trim text-black aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base">
-                {data.quantity}
-              </p>
+              {isUpdating || isRemoving ? (
+                <TailSpinSvg className='h-6 w-6 sm:h-[48px] sm:w-[48px]'/>
+              ) : (
+                <p className="relative flex h-6 w-6 items-center justify-center rounded-full border border-black bg-cream text-center font-display text-[16px] leading-trim text-black aria-selected:text-black sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base">
+                  {data.quantity}
+                </p>
+              )}
               <button
                 className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
                 onClick={handleAdd}
@@ -103,5 +107,52 @@ const CartProduct = ({ data }: { data: CartLine }) => {
     </>
   )
 }
+
+const TailSpinSvg = ({ className }: { className: string }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 38 38"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <defs>
+      <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a-tail-spin">
+        <stop stop-color="#000" stop-opacity="0" offset="0%" />
+        <stop stop-color="#000" stop-opacity=".631" offset="63.146%" />
+        <stop stop-color="#000" offset="100%" />
+      </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <g transform="translate(1 1)">
+        <path
+          d="M36 18c0-9.94-8.06-18-18-18"
+          id="Oval-2"
+          stroke="url(#a-tail-spin)"
+          stroke-width="2"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 18 18"
+            to="360 18 18"
+            dur="0.9s"
+            repeatCount="indefinite"
+          />
+        </path>
+        <circle fill="#000" cx="36" cy="18" r="1">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 18 18"
+            to="360 18 18"
+            dur="0.9s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </g>
+    </g>
+  </svg>
+)
 
 export default CartProduct
