@@ -1,16 +1,19 @@
-import { cookies } from 'next/dist/client/components/headers'
-
 import { CartFragment, cartFragment } from '~/shopify/sdk-gen/fragments'
 import { storefront } from '~/shopify/sdk-gen/sdk'
-import { cartCookieKey } from '~/shopify/storefront-hooks/cart-cookie-key'
 
 import Cart from './cart'
 import Logo from './logo'
 
 export default async function Header() {
-  const cookieStore = cookies()
-  const cookie = cookieStore.get(cartCookieKey)
-  const cartId = cookie?.value
+  /**
+   * Comment this out because it would pass the whole page to a lambda, making the site slow.
+   * We need to wait until this issue (https://github.com/vercel/next.js/issues/43690) is resolved
+   * so that we can run this code at the edge keeping the site fast, and also pre-fetching the cart.
+   */
+  // const cookieStore = cookies()
+  // const cookie = cookieStore.get(cartCookieKey)
+  // const cartId = cookie?.value
+  const cartId = ''
 
   let prefetchedCart: CartFragment | undefined = undefined
   if (cartId) {
@@ -19,6 +22,8 @@ export default async function Header() {
     })
     prefetchedCart = cart
   }
+
+  /* end of code to comment out */
 
   return (
     <header className="fixed top-0 z-50 min-w-full bg-cream">
