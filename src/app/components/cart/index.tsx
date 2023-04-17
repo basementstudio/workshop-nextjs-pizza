@@ -67,9 +67,9 @@ const Cart = ({
                   <p className="font-display text-[32px] uppercase leading-trim">
                     Your cart is empty
                   </p>
-                  <p className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart">
+                  <button onClick={() => cartOpenState.close()} className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart">
                     Add an item
-                  </p>
+                  </button>
                 </div>
               </div>
             )}
