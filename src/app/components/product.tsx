@@ -28,7 +28,6 @@ export default function Product({ data }: { data: ProductFragment }) {
     ?.values
 
   const onAddToCart = useCallback(async () => {
-    // console.log(selectedOptions.size)
     if (!selectedVariant) return
     handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
       onSuccess() {
