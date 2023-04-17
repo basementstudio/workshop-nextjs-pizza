@@ -4,7 +4,6 @@ import { createStorefrontHooks } from '@bsmnt/storefront-hooks'
 import { cartCookieKey } from './cart-cookie-key'
 import { cartFragment, userErrorFragment } from '../sdk-gen/fragments'
 import { storefront } from '../sdk-gen/sdk'
-import { create } from 'zustand'
 
 export const {
   QueryClientProvider,
