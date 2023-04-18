@@ -3,41 +3,39 @@
 import * as RadixDialog from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 
-import { CartFragment } from '~/shopify/sdk-gen/fragments'
-import { CartLine } from '~/shopify/sdk-gen/generated'
-import { useCartOpenState, useCartQuery } from '~/shopify/storefront-hooks'
+import placeholderTeeImgSrc from '~/public/tees/tee-basement-studio.png'
 
 import s from './cart.module.scss'
 import { CartFooter } from './cart-footer'
 import { CartHeader } from './cart-header'
 import { CartProduct } from './cart-product'
 
-export const Cart = ({
-  prefetchedCart
-}: {
-  prefetchedCart: CartFragment | undefined
-}) => {
-  const cartOpenState = useCartOpenState()
-  const cartQuery = useCartQuery({
-    queryOptions: { initialData: prefetchedCart }
-  })
-  const emptyState = cartQuery.data?.lines.edges.length === 0
+const cartMock = {
+  id: 'pizza',
+  checkoutUrl: '#',
+  lines: [
+    {
+      id: 'tee',
+      quantity: 2,
+      title: 'DARK BSMNT TEE',
+      description: 'THE BEST TEE YOU EVER HAD, WITH THE BASEMENT SPICE TWIST.',
+      size: 'L',
+      cost: 5
+    }
+  ],
+  totalCost: 5,
+  totalQuantity: 2
+}
+
+export const Cart = () => {
+  const emptyState = false
 
   return (
-    <RadixDialog.Root
-      open={cartOpenState.isOpen}
-      onOpenChange={(isOpen) => {
-        if (isOpen) {
-          cartOpenState.open()
-        } else {
-          cartOpenState.close()
-        }
-      }}
-    >
+    <RadixDialog.Root>
       <RadixDialog.Trigger asChild>
         <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim drop-shadow-cart transition-colors ease-in md:h-12 md:px-4 md:text-base better-hover:hover:bg-cream">
           CART<span className="-mt-1 inline-block md:-mt-2">(</span>
-          {cartQuery.data?.totalQuantity ?? 0}
+          {cartMock.totalQuantity}
           <span className="-mt-1 inline-block md:-mt-2">)</span>
         </button>
       </RadixDialog.Trigger>
@@ -67,24 +65,39 @@ export const Cart = ({
                   <p className="font-display text-[32px] uppercase leading-trim">
                     Your cart is empty
                   </p>
-                  <button
-                    onClick={cartOpenState.close}
-                    className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart transition-all ease-in-out better-hover:hover:translate-y-1 better-hover:hover:drop-shadow-none"
-                  >
-                    Add an item
-                  </button>
+                  <RadixDialog.Close asChild>
+                    <button
+                      type="button"
+                      className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart transition-all ease-in-out better-hover:hover:translate-y-1 better-hover:hover:drop-shadow-none"
+                    >
+                      Add an item
+                    </button>
+                  </RadixDialog.Close>
                 </div>
               </div>
             )}
-            {cartQuery.data?.lines.edges.map(({ node: line }) => (
-              <CartProduct key={line.id} data={line as CartLine} />
-            ))}
+            {cartMock.lines.map((line) => {
+              return (
+                <CartProduct
+                  key={line.id}
+                  data={{
+                    quantity: line.quantity,
+                    title: line.title,
+                    description: line.description,
+                    size: line.size,
+                    cost: line.cost,
+                    image: {
+                      src: placeholderTeeImgSrc.src,
+                      alt: 'dark bsmnt tee',
+                      width: placeholderTeeImgSrc.width,
+                      height: placeholderTeeImgSrc.height
+                    }
+                  }}
+                />
+              )
+            })}
           </div>
-          <CartFooter
-            emptyState={emptyState}
-            checkoutUrl={cartQuery.data?.checkoutUrl}
-            total={cartQuery.data?.cost.subtotalAmount.amount}
-          />
+          <CartFooter emptyState={emptyState} checkoutUrl={'#'} total={0} />
         </RadixDialog.Content>
       </RadixDialog.Portal>
     </RadixDialog.Root>

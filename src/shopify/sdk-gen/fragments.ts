@@ -1,6 +1,8 @@
 import type {
   Cart,
   CartGenqlSelection,
+  CartLine,
+  CartLineGenqlSelection,
   CartUserError,
   CartUserErrorGenqlSelection,
   Collection,
@@ -69,33 +71,49 @@ export const productFragment = {
   }
 } satisfies ProductGenqlSelection
 
+export const cartLineItemFragment = {
+  id: true,
+  quantity: true,
+  estimatedCost: {
+    subtotalAmount: {
+      amount: true
+    }
+  },
+  cost: {
+    subtotalAmount: { amount: true, currencyCode: true }
+  },
+  merchandise: {
+    on_ProductVariant: {
+      product: {
+        id: true,
+        title: true,
+        description: true
+      },
+      selectedOptions: {
+        name: true,
+        value: true
+      },
+      image: imageFragment
+    }
+  }
+} satisfies CartLineGenqlSelection
+
 export const cartFragment = {
   id: true,
   checkoutUrl: true,
   createdAt: true,
   lines: {
     __args: { first: 100 },
-    edges: {
-      node: {
-        id: true,
-        quantity: true,
-        estimatedCost: {
-          subtotalAmount: {
-            amount: true
-          }
-        },
-        merchandise: {
-          on_ProductVariant: {
-            product: productFragment,
-            ...productVariantFragment
-          }
-        }
-      }
-    }
+    nodes: cartLineItemFragment
   },
   totalQuantity: true,
   cost: { subtotalAmount: { amount: true, currencyCode: true } }
 } satisfies CartGenqlSelection
+
+export type CartLineFragment = FieldsSelection<
+  CartLine,
+  typeof cartLineItemFragment
+>
 
 export type CartFragment = FieldsSelection<Cart, typeof cartFragment>
 

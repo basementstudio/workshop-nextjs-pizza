@@ -4,11 +4,7 @@ import Image from 'next/image'
 
 import { isDev } from '~/lib/constants'
 import { ProductFragment } from '~/shopify/sdk-gen/fragments'
-import {
-  useAddLineItemsToCartMutation,
-  useCartOpenState,
-  useProductFormHelper
-} from '~/shopify/storefront-hooks'
+import { useProductFormHelper } from '~/shopify/storefront-hooks'
 
 import { SizeButton } from './size-btn'
 
@@ -19,23 +15,18 @@ export const Product = ({ data }: { data: ProductFragment }) => {
     handleSelectOption,
     selectedVariant
   } = useProductFormHelper(data)
-  const { mutate: handleAddToCart, isLoading: isAdding } =
-    useAddLineItemsToCartMutation()
-  const openCart = useCartOpenState().open
 
   const sizeVariants = optionsToSelect.filter(({ name }) => name === 'Size')[0]
     ?.values
+
+  const isAdding = false // hook loading state to a real interaction
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault()
         if (!selectedVariant || !data.availableForSale) return
-        handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
-          onSuccess() {
-            openCart()
-          }
-        })
+        // todo: add to cart!
       }}
       className="relative flex flex-col gap-4 rounded-2xl border border-black bg-cream p-4 font-display drop-shadow-cart sm:p-6 md:gap-6 md:rounded-extra md:border-2 lg:mx-0 lg:w-full"
     >
