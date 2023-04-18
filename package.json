@@ -1,8 +1,8 @@
 {
-  "name": "next-typescript",
+  "name": "workshop-nextjs-pizza",
   "version": "1.0.0",
-  "description": "A minimalist boilerplate — Next.js with TypeScript.",
-  "repository": "https://github.com/basementstudio/next-typescript",
+  "description": "Simple t-shirt shop project strongly spiced with basement.studio flavor for the Next.js & Pizza Workshop.",
+  "repository": "https://github.com/basementstudio/workshop-nextjs-pizza",
   "author": "basement.studio",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "start": "next start",
     "lint": "next lint && stylelint '**/*.{css,scss}'",
     "tsc": "tsc --pretty --noEmit",
-    "generate": "yarn sdk-gen generate --dir src/shopify/sdk-gen"
+    "generate": "yarn sdk-gen --dir src/shopify/sdk-gen"
   },
   "dependencies": {
     "@bsmnt/storefront-hooks": "^2.0.2",
@@ -21,18 +21,16 @@
     "@radix-ui/react-dialog": "^1.0.3",
     "@tanstack/react-query": "^4.29.1",
     "clsx": "1.1.1",
-    "hls.js": "1.1.5",
     "mousetrap": "1.6.5",
-    "next": "^13.3.0",
+    "next": "13.3.1-canary.4",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-merge-refs": "1.1.0",
-    "sharp": "^0.32.0",
-    "zustand": "^4.3.1"
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
-    "@bsmnt/sdk-gen": "^2.0.1",
+    "@bsmnt/sdk-gen": "^2.0.2",
     "@next/bundle-analyzer": "^13.0.2",
     "@next/eslint-plugin-next": "^13.0.2",
     "@types/css-font-loading-module": "0.0.7",

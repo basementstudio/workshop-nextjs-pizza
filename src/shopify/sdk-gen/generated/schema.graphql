@@ -371,7 +371,7 @@ enum BlogSortKeys {
   RELEVANCE
 }
 
-"The store's branding configuration.\n"
+"The store's [branding configuration](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets).\n"
 type Brand {
   """The colors of the store's brand."""
   colors: BrandColors!
@@ -4859,7 +4859,7 @@ type MediaImage implements Media & Node {
   previewImage: Image
 }
 
-"A menu used for navigation within a storefront.\n"
+"A [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) representing a hierarchy\nof hyperlinks (items).\n"
 type Menu implements Node {
   """The menu's handle."""
   handle: String!
@@ -6780,7 +6780,7 @@ type QueryRoot {
     query: String
   ): CollectionConnection!
 
-  """Find a customer by its access token."""
+  "The customer associated with the given access token. Tokens are obtained by using the\n[`customerAccessTokenCreate` mutation](https://shopify.dev/docs/api/storefront/latest/mutations/customerAccessTokenCreate).\n"
   customer(
     """The customer access token."""
     customerAccessToken: String!
@@ -6813,9 +6813,9 @@ type QueryRoot {
     near: GeoCoordinateInput
   ): LocationConnection!
 
-  """A storefront menu."""
+  "Retrieve a [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) by its handle.\n"
   menu(
-    """Returns a storefront menu by the specified handle."""
+    """The navigation menu's handle."""
     handle: String!
   ): Menu
 

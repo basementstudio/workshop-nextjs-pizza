@@ -41,11 +41,7 @@ export const metadata: Metadata = {
     'The Spicy Shop is a simple t-shirt e-commerce project strongly spiced with basement.studio stack for the Next.js & Pizza workshop'
 }
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
       <body className="bg-cream">
@@ -59,3 +55,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+export default RootLayout

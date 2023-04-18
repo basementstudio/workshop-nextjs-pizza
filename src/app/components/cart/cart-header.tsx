@@ -1,19 +1,17 @@
+'use client'
+
 import Image from 'next/image'
 
-export default function CartHeader({
-  closeTrigger
-}: {
-  closeTrigger?: React.ReactNode
-}) {
+const CartHeader = ({ closeTrigger }: { closeTrigger?: React.ReactNode }) => {
   return (
-    <div className="relative flex flex-col">
-      <div className="flex h-36 items-center justify-between bg-cream px-12 font-display">
-        <p className="text-5xl font-black text-black">YOUR CART</p>
+    <div className="relative flex flex-col px-4 sm:px-10">
+      <div className="flex h-16 items-center justify-between bg-cream font-display sm:h-36">
+        <p className="text-4xl font-black text-black sm:text-5xl">YOUR CART</p>
         {closeTrigger}
       </div>
 
       <Image
-        className="absolute -bottom-[9px] z-10 ml-10 w-[760px]"
+        className="absolute -bottom-1 z-10 max-w-[92%] sm:-bottom-[9px]"
         src="/primitives/cart-hr.svg"
         height={18}
         width={764}
@@ -23,3 +21,5 @@ export default function CartHeader({
     </div>
   )
 }
+
+export default CartHeader

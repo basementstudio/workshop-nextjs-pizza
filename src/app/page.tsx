@@ -1,5 +1,4 @@
-import { Container } from '~/components/layout/container'
-
+import { Container } from './components/container'
 import Hero from './sections/hero'
 import Shop from './sections/shop'
 import Stack from './sections/stack'
@@ -7,7 +6,7 @@ import Stack from './sections/stack'
 // can't use edge runtime yet because of this issue: https://github.com/vercel/next.js/issues/43690
 // export const runtime = 'edge'
 
-export default async function Page() {
+const Page = () => {
   return (
     <>
       <Container>
@@ -19,3 +18,5 @@ export default async function Page() {
     </>
   )
 }
+
+export default Page

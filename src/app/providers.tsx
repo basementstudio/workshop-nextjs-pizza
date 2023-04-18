@@ -1,10 +1,16 @@
 'use client'
 
 import { useEffect } from 'react'
+
+import { basementLog, isClient, isProd } from '~/lib/constants'
 import { QueryClientProvider } from '~/shopify/storefront-hooks'
 
-export const Providers = ({ children }: { children?: React.ReactNode }) => {
+if (isProd && isClient) {
+  // eslint-disable-next-line no-console
+  console.log(basementLog)
+}
 
+export const Providers = ({ children }: { children?: React.ReactNode }) => {
   // User is tabbing hook
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {

@@ -1,9 +1,18 @@
-export default function Logo() {
+import Image from 'next/image'
+import Link from 'next/link'
+
+const Logo = () => {
   return (
-    <>
-      <div className="drop-shadow-cart font-outline justify-center font-display text-3xl md:text-base font-black text-teal">
-        NEXT JS & PIZZA
-      </div>
-    </>
+    <Link href={'/'} aria-label="go home">
+      <Image
+        className="h-5 w-32 sm:h-8 sm:w-[212px]"
+        src="/logos/header-logo.svg"
+        height={32}
+        width={212}
+        alt="logo nextjs"
+      />
+    </Link>
   )
 }
+
+export default Logo
