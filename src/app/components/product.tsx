@@ -48,7 +48,7 @@ export const Product = ({ data }: { data: ProductFragment }) => {
         </div>
       </div>
       <div className="absolute left-24 z-10 w-20 sm:left-48 sm:top-4 md:w-36">
-        <div className="ellipse items-center justify-center border border-black bg-cream py-1 text-center font-black text-pink sm:border-2 md:h-[64px] md:w-[144px] md:pt-1 md:text-base">
+        <div className="ellipse items-center justify-center border border-black bg-pink py-1 text-center font-black text-black sm:border-2 md:h-[64px] md:w-[144px] md:pt-1 md:text-base">
           <p>${data.priceRange.minVariantPrice.amount}</p>
         </div>
       </div>
