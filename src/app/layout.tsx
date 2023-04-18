@@ -4,7 +4,7 @@ import { Neonderthaw } from '@next/font/google'
 import localFont from '@next/font/local'
 import type { Metadata } from 'next'
 
-import Header from './components/header'
+import { Header } from './components/header'
 import { Providers } from './providers'
 import Footer from './sections/footer'
 
@@ -36,7 +36,7 @@ const neon = Neonderthaw({
 })
 
 export const metadata: Metadata = {
-  title: 'Next JS & Pizza Workshop',
+  title: 'Next.js & Pizza — a workshop by basement.studio',
   description:
     'Simple t-shirt shop project strongly spiced with basement.studio flavor for the Next.js & Pizza Workshop.'
 }

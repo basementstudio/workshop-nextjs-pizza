@@ -25,8 +25,7 @@ export const {
         }
       })
 
-      if (cart === undefined) throw new Error('Request failed')
-      return cart
+      return cart ?? null
     }
   },
   mutators: {

@@ -1,12 +1,10 @@
-'use client'
-
 import { CartFragment, cartFragment } from '~/shopify/sdk-gen/fragments'
 import { storefront } from '~/shopify/sdk-gen/sdk'
 
 import Cart from './cart'
 import Logo from './logo'
 
-const Header = async () => {
+export const Header = async () => {
   /**
    * Comment this out because it would pass the whole page to a lambda, making the site slow.
    * We need to wait until this issue (https://github.com/vercel/next.js/issues/43690) is resolved
@@ -38,5 +36,3 @@ const Header = async () => {
     </header>
   )
 }
-
-export default Header
