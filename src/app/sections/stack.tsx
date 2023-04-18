@@ -46,7 +46,7 @@ export const Stack = () => {
         {stack.map(({ url, logo, alt }, idx) => (
           <a
             key={idx}
-            className="-mr-2 p-2 transition-transform duration-300 ease-out hover:scale-125"
+            className="-mr-2 p-2 transition-transform duration-300 ease-out better-hover:hover:scale-125"
             target="_blank"
             href={url}
             rel="noopener"

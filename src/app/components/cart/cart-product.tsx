@@ -53,7 +53,7 @@ export const CartProduct = ({ data }: { data: CartLine }) => {
             <p className="text-xs font-bold sm:text-base">QUANTITY</p>
             <div className="ml-3 flex gap-2 sm:ml-6 sm:gap-3">
               <button
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black transition-colors ease-in hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black transition-colors ease-in disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl xl:h-12  xl:w-12 xl:border-2 xl:text-base better-hover:hover:bg-cream"
                 onClick={handleRemove}
                 disabled={isUpdating}
               >
@@ -67,7 +67,7 @@ export const CartProduct = ({ data }: { data: CartLine }) => {
                 </p>
               )}
               <button
-                className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black transition-colors ease-in hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+                className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black transition-colors ease-in disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl xl:h-12  xl:w-12 xl:border-2 xl:text-base better-hover:hover:bg-cream"
                 onClick={handleAdd}
                 disabled={isUpdating}
               >
@@ -100,7 +100,7 @@ export const CartProduct = ({ data }: { data: CartLine }) => {
 
             <button
               onClick={handleRemoveLineItem}
-              className="ml-auto flex font-bold uppercase transition-opacity ease-in hover:opacity-60"
+              className="ml-auto flex font-bold uppercase transition-opacity ease-in better-hover:hover:opacity-60"
             >
               Remove
             </button>

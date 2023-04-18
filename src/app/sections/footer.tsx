@@ -94,7 +94,7 @@ const Footer = () => {
               {resources.map(({ name, url }) => (
                 <li key={name}>
                   <a
-                    className="transition-colors ease-in hover:text-pink"
+                    className="transition-colors ease-in better-hover:hover:text-pink"
                     target="_blank"
                     href={url}
                     rel="noopener"
@@ -114,7 +114,7 @@ const Footer = () => {
               {storefronts.map(({ name, url }) => (
                 <li key={name}>
                   <a
-                    className="transition-colors ease-in hover:text-pink"
+                    className="transition-colors ease-in better-hover:hover:text-pink"
                     target="_blank"
                     href={url}
                     rel="noopener"
@@ -133,7 +133,7 @@ const Footer = () => {
               {socials.map(({ name, url }) => (
                 <li key={name}>
                   <a
-                    className="transition-colors ease-in hover:text-pink"
+                    className="transition-colors ease-in better-hover:hover:text-pink"
                     target="_blank"
                     href={url}
                     rel="noopener"
