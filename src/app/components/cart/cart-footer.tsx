@@ -1,9 +1,7 @@
-'use client'
-
 import clsx from 'clsx'
 import Image from 'next/image'
 
-const CartFooter = ({
+export const CartFooter = ({
   total,
   checkoutUrl,
   emptyState
@@ -41,5 +39,3 @@ const CartFooter = ({
     </div>
   )
 }
-
-export default CartFooter

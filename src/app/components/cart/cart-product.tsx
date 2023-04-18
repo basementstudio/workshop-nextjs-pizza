@@ -10,7 +10,7 @@ import {
   useUpdateLineItemsInCartMutation
 } from '~/shopify/storefront-hooks'
 
-const CartProduct = ({ data }: { data: CartLine }) => {
+export const CartProduct = ({ data }: { data: CartLine }) => {
   const { mutate: onRemoveLineItems, isLoading: isRemoving } =
     useRemoveLineItemsFromCartMutation()
   const { mutate: onUpdateLineItem, isLoading: isUpdating } =
@@ -38,7 +38,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
     <div
       className={clsx(
         isRemoving && 'opacity-50',
-        'relative transition-opacity ease-in flex flex-row-reverse gap-4 rounded-xl border border-black bg-teal p-3 font-display drop-shadow-cart first:mt-5 last:mb-10 sm:gap-6 sm:rounded-extra sm:border-2 sm:p-6 sm:first:mt-10'
+        'relative flex flex-row-reverse gap-4 rounded-xl border border-black bg-teal p-3 font-display drop-shadow-cart transition-opacity ease-in first:mt-5 last:mb-10 sm:gap-6 sm:rounded-extra sm:border-2 sm:p-6 sm:first:mt-10'
       )}
     >
       <div className="flex flex-col gap-2 text-black sm:justify-between sm:gap-4">
@@ -52,7 +52,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
           <p className="text-xs font-bold sm:text-base">QUANTITY</p>
           <div className="ml-3 flex gap-2 sm:ml-6 sm:gap-3">
             <button
-              className="flex transition-colors ease-in h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+              className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black transition-colors ease-in hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
               onClick={handleRemove}
               disabled={isUpdating}
             >
@@ -66,7 +66,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
               </p>
             )}
             <button
-              className="flex transition-colors ease-in h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
+              className="flex h-6 w-6 items-center justify-center rounded-full border border-black bg-teal text-center font-display text-[16px] leading-trim text-black transition-colors ease-in hover:bg-cream disabled:opacity-70 sm:h-10 sm:w-10 sm:text-2xl  xl:h-12 xl:w-12 xl:border-2 xl:text-base"
               onClick={handleAdd}
               disabled={isUpdating}
             >
@@ -99,7 +99,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
 
           <button
             onClick={handleRemoveLineItem}
-            className="ml-auto flex font-bold uppercase hover:opacity-60 transition-opacity ease-in"
+            className="ml-auto flex font-bold uppercase transition-opacity ease-in hover:opacity-60"
           >
             Remove
           </button>
@@ -171,5 +171,3 @@ const TailSpinSvg = ({ className }: { className: string }) => (
     </g>
   </svg>
 )
-
-export default CartProduct

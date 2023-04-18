@@ -1,8 +1,8 @@
 import { CartFragment, cartFragment } from '~/shopify/sdk-gen/fragments'
 import { storefront } from '~/shopify/sdk-gen/sdk'
 
-import Cart from './cart'
-import Logo from './logo'
+import { Cart } from './cart'
+import { Logo } from './logo'
 
 export const Header = async () => {
   /**

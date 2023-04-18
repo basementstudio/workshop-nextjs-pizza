@@ -8,11 +8,11 @@ import { CartLine } from '~/shopify/sdk-gen/generated'
 import { useCartOpenState, useCartQuery } from '~/shopify/storefront-hooks'
 
 import s from './cart.module.scss'
-import CartFooter from './cart-footer'
-import CartHeader from './cart-header'
-import CartProduct from './cart-product'
+import { CartFooter } from './cart-footer'
+import { CartHeader } from './cart-header'
+import { CartProduct } from './cart-product'
 
-const Cart = ({
+export const Cart = ({
   prefetchedCart
 }: {
   prefetchedCart: CartFragment | undefined
@@ -90,5 +90,3 @@ const Cart = ({
     </RadixDialog.Root>
   )
 }
-
-export default Cart

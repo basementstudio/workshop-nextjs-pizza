@@ -1,5 +1,3 @@
-'use client'
-
 import { createStorefrontHooks } from '@bsmnt/storefront-hooks'
 
 import { cartFragment, userErrorFragment } from '../sdk-gen/fragments'

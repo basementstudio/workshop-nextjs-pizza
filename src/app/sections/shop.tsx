@@ -3,7 +3,7 @@ import { storefront } from '~/shopify/sdk-gen/sdk'
 import { getShopifyGid } from '~/shopify/utils'
 
 import Grid from '../components/grid'
-import Product from '../components/product'
+import { Product } from '../components/product'
 
 export const Shop = async () => {
   const { collection } = await storefront.query({

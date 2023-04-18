@@ -1,8 +1,10 @@
-'use client'
-
 import Image from 'next/image'
 
-const CartHeader = ({ closeTrigger }: { closeTrigger?: React.ReactNode }) => {
+export const CartHeader = ({
+  closeTrigger
+}: {
+  closeTrigger?: React.ReactNode
+}) => {
   return (
     <div className="relative flex flex-col">
       <div className="flex h-16 items-center justify-between bg-cream px-4 font-display sm:h-36 sm:px-12">
@@ -21,5 +23,3 @@ const CartHeader = ({ closeTrigger }: { closeTrigger?: React.ReactNode }) => {
     </div>
   )
 }
-
-export default CartHeader
