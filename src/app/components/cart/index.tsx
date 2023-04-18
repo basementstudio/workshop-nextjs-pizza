@@ -48,7 +48,7 @@ const Cart = ({
         <RadixDialog.Content
           className={clsx(
             s.content,
-            'fixed right-0 top-0 z-50 flex h-screen w-full flex-col border-black bg-cream sm:rounded-bl-3xl sm:border-l-2 md:w-[850px]'
+            'fixed right-0 top-0 z-50 flex h-[100dvh] w-full flex-col border-black bg-cream sm:rounded-bl-3xl sm:border-l-2 md:w-[850px]'
           )}
         >
           <CartHeader
