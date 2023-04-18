@@ -267,7 +267,7 @@ export type BlogSortKeys = 'HANDLE' | 'TITLE' | 'ID' | 'RELEVANCE'
 
 
 /**
- * The store's branding configuration.
+ * The store's [branding configuration](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets).
  * 
  */
 export interface Brand {
@@ -2318,7 +2318,8 @@ export interface MediaImage {
 
 
 /**
- * A menu used for navigation within a storefront.
+ * A [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) representing a hierarchy
+ * of hyperlinks (items).
  * 
  */
 export interface Menu {
@@ -3357,7 +3358,11 @@ export interface QueryRoot {
     collectionByHandle?: Collection
     /** List of the shop’s collections. */
     collections: CollectionConnection
-    /** Find a customer by its access token. */
+    /**
+     * The customer associated with the given access token. Tokens are obtained by using the
+     * [`customerAccessTokenCreate` mutation](https://shopify.dev/docs/api/storefront/latest/mutations/customerAccessTokenCreate).
+     * 
+     */
     customer?: Customer
     /** Returns the localized experiences configured for the shop. */
     localization: Localization
@@ -3368,7 +3373,10 @@ export interface QueryRoot {
      * 
      */
     locations: LocationConnection
-    /** A storefront menu. */
+    /**
+     * Retrieve a [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) by its handle.
+     * 
+     */
     menu?: Menu
     /** Fetch a specific Metaobject by one of its unique identifiers. */
     metaobject?: Metaobject
@@ -4329,7 +4337,7 @@ export interface BlogEdgeGenqlSelection{
 
 
 /**
- * The store's branding configuration.
+ * The store's [branding configuration](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets).
  * 
  */
 export interface BrandGenqlSelection{
@@ -6955,7 +6963,8 @@ export interface MediaImageGenqlSelection{
 
 
 /**
- * A menu used for navigation within a storefront.
+ * A [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) representing a hierarchy
+ * of hyperlinks (items).
  * 
  */
 export interface MenuGenqlSelection{
@@ -8517,7 +8526,11 @@ export interface QueryRootGenqlSelection{
      * 
      */
     query?: (Scalars['String'] | null)} })
-    /** Find a customer by its access token. */
+    /**
+     * The customer associated with the given access token. Tokens are obtained by using the
+     * [`customerAccessTokenCreate` mutation](https://shopify.dev/docs/api/storefront/latest/mutations/customerAccessTokenCreate).
+     * 
+     */
     customer?: (CustomerGenqlSelection & { __args: {
     /** The customer access token. */
     customerAccessToken: Scalars['String']} })
@@ -8544,9 +8557,12 @@ export interface QueryRootGenqlSelection{
     sortKey?: (LocationSortKeys | null), 
     /** Used to sort results based on proximity to the provided location. */
     near?: (GeoCoordinateInput | null)} })
-    /** A storefront menu. */
+    /**
+     * Retrieve a [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) by its handle.
+     * 
+     */
     menu?: (MenuGenqlSelection & { __args: {
-    /** Returns a storefront menu by the specified handle. */
+    /** The navigation menu's handle. */
     handle: Scalars['String']} })
     /** Fetch a specific Metaobject by one of its unique identifiers. */
     metaobject?: (MetaobjectGenqlSelection & { __args?: {

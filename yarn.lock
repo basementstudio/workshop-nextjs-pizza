@@ -83,10 +83,10 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@bsmnt/sdk-gen@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@bsmnt/sdk-gen/-/sdk-gen-2.0.1.tgz#08db17f40d659ecce5c6aa6c18e08987537e7d07"
-  integrity sha512-Y0Ai4rYVnz8qYCqyCoGh3dv6H3h0l7pEAqUCtZHxCi/jlm6nTGmlH6AUXLF06flnaog4qf9S0LS9eaBBLE9vdg==
+"@bsmnt/sdk-gen@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@bsmnt/sdk-gen/-/sdk-gen-2.0.2.tgz#863f7b33e649498c8f876c80e6defa6f7331b507"
+  integrity sha512-RZLvwQ5Uke3vN9Vv8x1ovDCnKjuY6oEQX3n0HdCKFkcBkaVzc9abfrHHtWKc3MJ8EQurNQog3cPsotgIqkM5Gw==
   dependencies:
     "@genql/cli" "^3.0.5"
     arg "^5.0.1"
