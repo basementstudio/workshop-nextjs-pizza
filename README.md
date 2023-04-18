@@ -82,4 +82,4 @@ Thank you for coming 🏴
 
 ---
 
-![cover image](https://github.com/basementstudio/next-typescript/raw/main/public/og.png 'We Make Cool Sh*t That Performs')
+![cover image](https://github.com/basementstudio/workshop-nextjs-pizza/blob/main/public/og.png 'Spicy Shop ft. Julian Benegas')

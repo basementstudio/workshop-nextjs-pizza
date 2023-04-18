@@ -38,7 +38,7 @@ const neon = Neonderthaw({
 export const metadata: Metadata = {
   title: 'Next JS & Pizza Workshop',
   description:
-    'Simple t-shirt shop project strongly spiced with basement.studio flavor for the Next.js & Pizza Workshop.'
+    'The Spicy Shop is a simple t-shirt e-commerce project strongly spiced with basement.studio stack for the Next.js & Pizza workshop'
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
