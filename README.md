@@ -4,6 +4,7 @@
 
 Simple t-shirt shop project strongly spiced with [basement.studio](https://basement.studio/) flavor for the Next.js & Pizza Workshop.
 
+<b>Starting URL: [https://workshop-nextjs-pizza-git-starting-point-basement.vercel.app/](https://workshop-nextjs-pizza-git-starting-point-basement.vercel.app/)</b>
 
 ## Our Commerce Toolkit
 
