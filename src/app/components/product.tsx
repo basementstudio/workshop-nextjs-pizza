@@ -81,7 +81,7 @@ const Product = ({ data }: { data: ProductFragment }) => {
                 />
               )
             })}
-            <label className="pointer-events-none absolute -bottom-0 left-1/2 opacity-0">
+            <label className="pointer-events-none absolute -bottom-0 left-0 md:left-1/2 opacity-0">
               <span className="sr-only">Size</span>
               <input
                 tabIndex={-1}
