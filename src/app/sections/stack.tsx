@@ -33,7 +33,7 @@ const stack = [
   }
 ]
 
-const Stack = () => {
+export const Stack = () => {
   return (
     <section className="relative flex flex-col gap-12 rounded-extra bg-cream px-12 py-36 text-center font-display drop-shadow-section sm:px-12 md:py-48">
       <p className="m-auto max-w-[80vw] text-base font-bold uppercase leading-tight text-black sm:text-5xl md:max-w-3xl md:text-title">
@@ -92,5 +92,3 @@ const Stack = () => {
     </section>
   )
 }
-
-export default Stack

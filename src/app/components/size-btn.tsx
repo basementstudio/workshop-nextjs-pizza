@@ -1,8 +1,6 @@
-'use client'
-
 import clsx from 'clsx'
 
-const SizeButton = ({
+export const SizeButton = ({
   size,
   selected,
   onClick,
@@ -29,5 +27,3 @@ const SizeButton = ({
     </>
   )
 }
-
-export default SizeButton

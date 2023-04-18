@@ -10,7 +10,7 @@ import {
   useUpdateLineItemsInCartMutation
 } from '~/shopify/storefront-hooks'
 
-const CartProduct = ({ data }: { data: CartLine }) => {
+export const CartProduct = ({ data }: { data: CartLine }) => {
   const { mutate: onRemoveLineItems, isLoading: isRemoving } =
     useRemoveLineItemsFromCartMutation()
   const { mutate: onUpdateLineItem, isLoading: isUpdating } =
@@ -45,7 +45,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
         <div className="text-3xl font-black uppercase leading-trim sm:text-product">
           <p>{data.merchandise.product.title}</p>
         </div>
-        <div className="text-xs uppercase leading-none md:leading-trim text-black sm:text-2xl sm:leading-tight md:w-full">
+        <div className="text-xs uppercase leading-none text-black sm:text-2xl sm:leading-tight md:w-full md:leading-trim">
           <p>{data.merchandise.product.description}</p>
         </div>
         <div className="flex flex-col gap-1">
@@ -173,5 +173,3 @@ const TailSpinSvg = ({ className }: { className: string }) => (
     </g>
   </svg>
 )
-
-export default CartProduct

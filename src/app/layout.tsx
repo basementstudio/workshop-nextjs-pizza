@@ -1,10 +1,11 @@
 import './css/global.scss'
 
-import { Neonderthaw } from '@next/font/google'
 import localFont from '@next/font/local'
 import type { Metadata } from 'next'
 
-import Header from './components/header'
+import { siteURL } from '~/lib/constants'
+
+import { Header } from './components/header'
 import { Providers } from './providers'
 import Footer from './sections/footer'
 
@@ -26,24 +27,20 @@ const nichrome = localFont({
       style: 'regular'
     }
   ],
+  preload: true,
   variable: '--font-nichrome'
 })
 
-const neon = Neonderthaw({
-  subsets: ['latin'],
-  variable: '--font-neon',
-  weight: '400'
-})
-
 export const metadata: Metadata = {
-  title: 'Next JS & Pizza Workshop',
+  title: 'Next.js & Pizza — a workshop by basement.studio',
   description:
-    'The Spicy Shop is a simple t-shirt e-commerce project strongly spiced with basement.studio stack for the Next.js & Pizza workshop'
+    'The Spicy Shop is a simple t-shirt e-commerce project strongly spiced with basement.studio stack for the Next.js & Pizza workshop',
+  metadataBase: siteURL
 }
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" className={`${nichrome.variable} ${neon.variable}`}>
+    <html lang="en" className={`${nichrome.variable} bg-cream`}>
       <body className="bg-cream">
         <Providers>
           {/* @ts-expect-error rsc */}

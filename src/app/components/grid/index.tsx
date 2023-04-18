@@ -10,6 +10,7 @@ const Grid = () => {
         width={1920}
         alt="hr"
         loading="eager"
+        priority
       />
       <Image
         className="absolute -top-[10px] h-[18px] w-screen items-center justify-center sm:hidden"

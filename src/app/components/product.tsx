@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useCallback } from 'react'
 
 import { isDev } from '~/lib/constants'
 import { ProductFragment } from '~/shopify/sdk-gen/fragments'
@@ -11,9 +10,9 @@ import {
   useProductFormHelper
 } from '~/shopify/storefront-hooks'
 
-import SizeButton from './size-btn'
+import { SizeButton } from './size-btn'
 
-const Product = ({ data }: { data: ProductFragment }) => {
+export const Product = ({ data }: { data: ProductFragment }) => {
   const {
     optionsToSelect,
     selectedOptions,
@@ -27,20 +26,16 @@ const Product = ({ data }: { data: ProductFragment }) => {
   const sizeVariants = optionsToSelect.filter(({ name }) => name === 'Size')[0]
     ?.values
 
-  const onAddToCart = useCallback(async () => {
-    if (!selectedVariant || !data.availableForSale) return
-    handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
-      onSuccess() {
-        openCart()
-      }
-    })
-  }, [handleAddToCart, openCart, selectedVariant])
-
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault()
-        onAddToCart()
+        if (!selectedVariant || !data.availableForSale) return
+        handleAddToCart([{ merchandiseId: selectedVariant?.id, quantity: 1 }], {
+          onSuccess() {
+            openCart()
+          }
+        })
       }}
       className="relative flex flex-col gap-4 rounded-2xl border border-black bg-cream p-4 font-display drop-shadow-cart sm:p-6 md:gap-6 md:rounded-extra md:border-2 lg:mx-0 lg:w-full"
     >
@@ -112,5 +107,3 @@ const SoldOut = () => (
     </p>
   </div>
 )
-
-export default Product

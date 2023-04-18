@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <Link href={'/'} aria-label="go home">
       <Image
@@ -9,10 +9,9 @@ const Logo = () => {
         src="/logos/header-logo.svg"
         height={32}
         width={212}
-        alt="logo nextjs"
+        alt="logo nextjs & pizza"
+        priority
       />
     </Link>
   )
 }
-
-export default Logo

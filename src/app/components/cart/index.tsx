@@ -8,11 +8,11 @@ import { CartLine } from '~/shopify/sdk-gen/generated'
 import { useCartOpenState, useCartQuery } from '~/shopify/storefront-hooks'
 
 import s from './cart.module.scss'
-import CartFooter from './cart-footer'
-import CartHeader from './cart-header'
-import CartProduct from './cart-product'
+import { CartFooter } from './cart-footer'
+import { CartHeader } from './cart-header'
+import { CartProduct } from './cart-product'
 
-const Cart = ({
+export const Cart = ({
   prefetchedCart
 }: {
   prefetchedCart: CartFragment | undefined
@@ -62,13 +62,13 @@ const Cart = ({
           />
           <div className="relative flex flex-1 flex-col gap-4 overflow-y-auto px-5 sm:mx-12 sm:gap-6 sm:pl-0">
             {emptyState && (
-              <div className="absolute inset-0 flex grid place-items-center text-black">
+              <div className="absolute inset-0 grid place-items-center text-black">
                 <div className="text-center">
                   <p className="font-display text-[32px] uppercase leading-trim">
                     Your cart is empty
                   </p>
                   <button
-                    onClick={() => cartOpenState.close()}
+                    onClick={cartOpenState.close}
                     className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart transition-all ease-in-out hover:translate-y-1 hover:drop-shadow-none"
                   >
                     Add an item
@@ -90,5 +90,3 @@ const Cart = ({
     </RadixDialog.Root>
   )
 }
-
-export default Cart

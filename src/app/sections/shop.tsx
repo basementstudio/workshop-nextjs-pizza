@@ -1,13 +1,11 @@
-'use client'
-
 import { productFragment } from '~/shopify/sdk-gen/fragments'
 import { storefront } from '~/shopify/sdk-gen/sdk'
 import { getShopifyGid } from '~/shopify/utils'
 
 import Grid from '../components/grid'
-import Product from '../components/product'
+import { Product } from '../components/product'
 
-const Shop = async () => {
+export const Shop = async () => {
   const { collection } = await storefront.query({
     collection: {
       __args: { id: getShopifyGid('Collection', '442672120084') },
@@ -31,5 +29,3 @@ const Shop = async () => {
     </div>
   )
 }
-
-export default Shop
