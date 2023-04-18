@@ -1,3 +1,5 @@
+'use client'
+
 import { productFragment } from '~/shopify/sdk-gen/fragments'
 import { storefront } from '~/shopify/sdk-gen/sdk'
 import { getShopifyGid } from '~/shopify/utils'

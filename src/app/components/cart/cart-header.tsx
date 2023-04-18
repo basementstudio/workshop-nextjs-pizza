@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 const CartHeader = ({ closeTrigger }: { closeTrigger?: React.ReactNode }) => {
