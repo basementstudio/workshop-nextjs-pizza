@@ -27,8 +27,7 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-merge-refs": "1.1.0",
-    "sharp": "^0.32.0",
-    "zustand": "^4.3.1"
+    "sharp": "^0.32.0"
   },
   "devDependencies": {
     "@bsmnt/sdk-gen": "^2.0.1",
