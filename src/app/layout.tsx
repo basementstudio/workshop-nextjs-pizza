@@ -34,7 +34,7 @@ const nichrome = localFont({
 export const metadata: Metadata = {
   title: 'Next.js & Pizza — a workshop by basement.studio',
   description:
-    'Simple t-shirt shop project strongly spiced with basement.studio flavor for the Next.js & Pizza Workshop.',
+    'The Spicy Shop is a simple t-shirt e-commerce project strongly spiced with basement.studio stack for the Next.js & Pizza workshop',
   metadataBase: siteURL
 }
 
