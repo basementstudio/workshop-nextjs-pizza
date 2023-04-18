@@ -15,7 +15,7 @@ const CartFooter = ({
   return (
     <div className="relative">
       <Image
-        className="absolute -top-[5px] z-30 w-[760px] sm:top-[-9px] sm:mx-10"
+        className="absolute -top-[5px] z-30 mx-4 max-w-[92%] sm:top-[-9px] sm:mx-10"
         src="/primitives/cart-hr.svg"
         height={18}
         width={764}

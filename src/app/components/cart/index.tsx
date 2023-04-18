@@ -35,7 +35,7 @@ const Cart = ({
       }}
     >
       <RadixDialog.Trigger asChild>
-        <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim drop-shadow-cart  transition-colors ease-in hover:bg-cream md:h-12 md:px-4 md:text-base">
+        <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim drop-shadow-cart transition-colors ease-in hover:bg-cream md:h-12 md:px-4 md:text-base">
           CART<span className="-mt-2 inline-block">(</span>
           {cartQuery.data?.totalQuantity ?? 0}
           <span className="-mt-2 inline-block">)</span>
@@ -60,14 +60,17 @@ const Cart = ({
               </RadixDialog.Close>
             }
           />
-          <div className="relative flex flex-1 flex-col gap-4 overflow-y-auto px-5 sm:mx-12 sm:gap-6">
+          <div className="relative flex flex-1 flex-col gap-4 overflow-y-auto px-5 sm:mx-12 sm:gap-6 sm:pl-0">
             {emptyState && (
               <div className="absolute inset-0 flex grid place-items-center text-black">
                 <div className="text-center">
                   <p className="font-display text-[32px] uppercase leading-trim">
                     Your cart is empty
                   </p>
-                  <button onClick={() => cartOpenState.close()} className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart">
+                  <button
+                    onClick={() => cartOpenState.close()}
+                    className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart transition-all ease-in-out hover:translate-y-1 hover:drop-shadow-none"
+                  >
                     Add an item
                   </button>
                 </div>

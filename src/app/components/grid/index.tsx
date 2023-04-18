@@ -1,62 +1,44 @@
 import Image from 'next/image'
-import { Fragment } from 'react'
 
 const Grid = () => {
-  const row = 2
-  const num = 3
   return (
-    <div>
+    <>
       <Image
-        className="absolute -top-[10px] hidden h-[18px] w-screen items-center justify-center"
+        className="absolute -top-[10px] -ml-[9px] hidden  h-[18px] w-screen items-center justify-center sm:block"
         src="/primitives/hr.svg"
         height={18}
         width={1920}
-        alt=""
+        alt="hr"
         loading="eager"
       />
       <Image
-        className="absolute -top-[10px] h-[18px] w-screen items-center justify-center"
+        className="absolute -top-[10px] h-[18px] w-screen items-center justify-center sm:hidden"
         src="/primitives/cart-hr.svg"
         height={18}
-        width={1920}
-        alt=""
+        width={500}
+        alt="hr"
         loading="eager"
       />
-      <div className="absolute inset-0 -z-10">
-        {[...Array(row)].map((_, i) => (
-          <div key={i} className="flex w-full flex-wrap">
-            {[...Array(num)].map((_, i) => (
-              <Fragment key={i}>
-                <span className=" box-outline aspect-square w-2/12  bg-teal" />
-                <span className=" box-outline aspect-square w-2/12 bg-cream" />
-              </Fragment>
-            ))}
-            {[...Array(num)].map((_, i) => (
-              <Fragment key={i}>
-                <span className=" box-outline aspect-square w-2/12 bg-cream" />
-                <span className=" box-outline aspect-square w-2/12  bg-teal" />
-              </Fragment>
-            ))}
-          </div>
-        ))}
+      <div className="pointer-events-none absolute inset-0 -z-10 h-[90%] bg-[url('/primitives/grid-bg.svg')] bg-[length:113px_113px] bg-center bg-repeat sm:h-[80%]  sm:bg-[length:416px_416px]">
+        <div className="h-full"></div>
         <Image
-          className="relative -top-[9px] hidden h-[18px] w-screen items-center justify-center"
+          className="relative -top-[9px] -ml-[9px] hidden h-[18px] w-screen  sm:block"
           src="/primitives/hr.svg"
           height={18}
-          width={1920}
-          alt=""
+          width={1900}
+          alt="hr"
           loading="eager"
         />
         <Image
-          className="relative -top-[9px] h-[18px] w-screen items-center justify-center"
+          className="relative -top-[9px]  h-[18px] w-screen items-center justify-center sm:hidden "
           src="/primitives/cart-hr.svg"
           height={18}
-          width={1920}
-          alt=""
+          width={500}
+          alt="hr"
           loading="eager"
         />
       </div>
-    </div>
+    </>
   )
 }
 
