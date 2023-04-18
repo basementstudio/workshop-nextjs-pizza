@@ -45,7 +45,7 @@ const CartProduct = ({ data }: { data: CartLine }) => {
         <div className="text-3xl font-black uppercase leading-trim sm:text-product">
           <p>{data.merchandise.product.title}</p>
         </div>
-        <div className="text-xs uppercase leading-trim text-black sm:text-2xl sm:leading-tight md:w-full">
+        <div className="text-xs uppercase leading-none md:leading-trim text-black sm:text-2xl sm:leading-tight md:w-full">
           <p>{data.merchandise.product.description}</p>
         </div>
         <div className="flex flex-col gap-1">
