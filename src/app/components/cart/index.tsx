@@ -35,7 +35,7 @@ export const Cart = ({
       }}
     >
       <RadixDialog.Trigger asChild>
-        <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim drop-shadow-cart transition-colors ease-in hover:bg-cream md:h-12 md:px-4 md:text-base">
+        <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim drop-shadow-cart transition-colors ease-in better-hover:bg-cream md:h-12 md:px-4 md:text-base">
           CART<span className="-mt-1 md:-mt-2 inline-block">(</span>
           {cartQuery.data?.totalQuantity ?? 0}
           <span className="-mt-1 md:-mt-2 inline-block">)</span>
@@ -54,7 +54,7 @@ export const Cart = ({
           <CartHeader
             closeTrigger={
               <RadixDialog.Close asChild>
-                <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim text-black  drop-shadow-cart transition-colors ease-in hover:bg-cream md:h-12 md:px-4 md:text-base">
+                <button className="flex h-8 items-center justify-end rounded-full border-2 border-black bg-pink px-2 py-2 text-xl font-bold leading-trim text-black  drop-shadow-cart transition-colors ease-in better-hover:bg-cream md:h-12 md:px-4 md:text-base">
                   CLOSE &nbsp; X
                 </button>
               </RadixDialog.Close>
@@ -69,7 +69,7 @@ export const Cart = ({
                   </p>
                   <button
                     onClick={cartOpenState.close}
-                    className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart transition-all ease-in-out hover:translate-y-1 hover:drop-shadow-none"
+                    className="font-outline font-display text-[48px] font-extrabold uppercase tracking-[0.04em] text-pink drop-shadow-cart transition-all ease-in-out better-hover:translate-y-1 hover:drop-shadow-none"
                   >
                     Add an item
                   </button>

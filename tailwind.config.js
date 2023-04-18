@@ -10,7 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: { xl: '1440px' },
+      screens: {
+        xl: '1440px',
+        'better-hover': { raw: '(hover: hover) and (pointer: fine)' }
+      },
       colors: {
         black: '#000000',
         cream: '#FFF5DC',

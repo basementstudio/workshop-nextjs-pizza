@@ -90,7 +90,7 @@ export const Product = ({ data }: { data: ProductFragment }) => {
           </div>
           <button
             disabled={isAdding}
-            className="flex h-6 items-center justify-center rounded-full border border-cream bg-teal px-2 text-center font-display text-[16px] font-bold leading-trim text-black transition-colors ease-in hover:bg-black hover:text-cream disabled:bg-black disabled:text-cream sm:h-10 sm:text-2xl md:w-52 md:px-4 xl:h-12 xl:border-2 xl:text-base"
+            className="flex h-6 items-center justify-center rounded-full border border-cream bg-teal px-2 text-center font-display text-[16px] font-bold leading-trim text-black transition-colors ease-in better-hover:bg-black better-hover:text-cream disabled:bg-black disabled:text-cream sm:h-10 sm:text-2xl md:w-52 md:px-4 xl:h-12 xl:border-2 xl:text-base"
           >
             {isAdding ? 'ADDING...' : 'ADD TO CART'}
           </button>
