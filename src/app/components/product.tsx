@@ -81,7 +81,7 @@ const Product = ({ data }: { data: ProductFragment }) => {
                 />
               )
             })}
-            <label className="pointer-events-none absolute -bottom-0 left-0 md:left-1/2 opacity-0">
+            <label className="pointer-events-none absolute -bottom-0 left-0 opacity-0 md:left-1/2">
               <span className="sr-only">Size</span>
               <input
                 tabIndex={-1}
@@ -106,7 +106,7 @@ const Product = ({ data }: { data: ProductFragment }) => {
 }
 
 const SoldOut = () => (
-  <div className="absolute inset-0 z-50 grid cursor-not-allowed place-items-center bg-black/70">
+  <div className="absolute inset-0 z-50 grid cursor-not-allowed place-items-center rounded-xl bg-black/70 md:rounded-3xl">
     <p className="grid h-[77px] w-[174px] place-items-center rounded-[99%] border border-solid border-black bg-cream text-base font-bold uppercase text-black sm:h-[155px] sm:w-[348px] sm:text-product">
       Sold Out
     </p>
