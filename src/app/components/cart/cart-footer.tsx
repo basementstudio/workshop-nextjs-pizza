@@ -29,7 +29,7 @@ export const CartFooter = ({
           rel="noopener"
           href={checkoutUrl}
           className={clsx(
-            emptyState ? 'pointer-events-none opacity-50' : 'better-hover:text-teal',
+            emptyState ? 'pointer-events-none opacity-50' : 'hover:text-teal',
             'font-outline inline-block justify-center font-display text-2xl font-black tracking-widest text-pink drop-shadow-cart transition-colors ease-in  sm:text-5xl'
           )}
         >
