@@ -19,12 +19,11 @@ This project is powered by the [BSMNT Commerce Toolkit](https://github.com/basem
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Shopify](https://www.shopify.com/)
-
+- [Vercel](https://vercel.com/)
 
 ## Resources
 
 - [Storefront Design - Figma File](https://www.figma.com/file/apST1EGGxQ5E2FiTLAbzlM/Untitled?node-id=0%3A1&t=q09OsJxJaDru8Yfc-1)
-
 
 ## Development
 
