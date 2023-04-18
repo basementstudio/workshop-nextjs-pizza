@@ -47,27 +47,20 @@ This project is powered by the [BSMNT Commerce Toolkit](https://github.com/basem
    yarn dev
    ```
 
-### Phase 1: Product UI
-`20 minutes`
+### Phase 1: Repo Overview
+`10 minutes`
 
-- Using Tailwind
-- Don't connect to shopify yet
+- File structure
+- Libraries we're using
 
-### Phase 2: Integrate with Shopify using `@bsmnt/sdk-gen`
-`15 minutes`
+### Phase 2: Add cart functionality using `@bsmnt/storefront-hooks`
+`45 minutes`
 
-- Read the [guide](https://github.com/basementstudio/commerce-toolkit#bsmntsdk-gen).
-- Use shopify graphql endpoint: `https://next-js-pizza-by-bsmnt.myshopify.com/api/2023-01/graphql`.
-- Use public shopify storefront access token (found in `.env.example`).
-
-### Phase 3: Add cart functionality using `@bsmnt/storefront-hooks`
-`30 minutes`
-
-- Why? Standard, uses react-query, can connect to any backend
+- Why a library? Standard, uses react-query, can connect to any backend
 - Read the [guide](https://github.com/basementstudio/commerce-toolkit#bsmntstorefront-hooks)
 - Also you can check the [example with Shopify here](https://github.com/basementstudio/commerce-toolkit/blob/main/examples/nextjs-shopify/src/storefront/hooks/index.tsx)
 
-### Phase 4: Deploy to Vercel
+### Phase 3: Deploy to Vercel
 `5 minutes`
 
 - Make sure you add the required environment variables
