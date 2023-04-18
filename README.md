@@ -1,6 +1,6 @@
 # workshop-nextjs-pizza
 
-![cover image](https://raw.githubusercontent.com/basementstudio/workshop-nextjs-pizza/main/public/og.png 'Spicy Shop ft. Julián Benegas')
+![cover image](https://raw.githubusercontent.com/basementstudio/workshop-nextjs-pizza/main/src/app/opengraph-image.png 'Spicy Shop ft. Julián Benegas')
 
 Simple t-shirt shop project strongly spiced with [basement.studio](https://basement.studio/) flavor for the Next.js & Pizza Workshop.
 
@@ -81,7 +81,3 @@ This project is powered by the [BSMNT Commerce Toolkit](https://github.com/basem
 ---
 
 Thank you for coming 🏴
-
----
-
-![cover image](https://github.com/basementstudio/workshop-nextjs-pizza/blob/main/public/og.png 'Spicy Shop ft. Julian Benegas')
